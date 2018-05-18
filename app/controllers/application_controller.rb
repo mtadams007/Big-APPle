@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
-    include Find
-    include Search
+    # include Find
+    # include Yelp_search
+    # include HTTParty
 end
