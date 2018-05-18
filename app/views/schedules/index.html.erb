@@ -2,4 +2,9 @@
 <div class="schedule-box"></div>
 <div class="schedule-box"></div>
 
-<%  %>
+
+<!-- code for checkboxes on choice page -->
+<%= simple_form_for @user do |f| %>
+  <%= f.input_field :choose, as: :boolean, boolean_style: :inline %>
+<% end %>
+
