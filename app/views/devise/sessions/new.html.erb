@@ -2,9 +2,9 @@
 <div class="login-box">
 <h2>Log in</h2>
 
-<%= simple_form_for @user do |f| %>
-  <%= f.input :email %>
-  <%= f.input :password %>
+<%= simple_form_for @user do defaults: { input_html: { class: 'form' } } |f| %>
+  <%= f.input :email, placeholder: 'Enter email' %>
+  <%= f.input :password, placeholder: 'Password' %>
   <%= f.button :submit %>
 <% end %>
 
