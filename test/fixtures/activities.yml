@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_slot: MyString
+  schedule_id: 1
+  business_identity: MyString
+  image_url: MyString
+  name: MyString
+  title: MyString
+  rating: 1.5
+  url: MyString
+  address: MyText
+  phone: MyString
+  distance: 1.5
+  open: 1
+  close: 1
+
+two:
+  time_slot: MyString
+  schedule_id: 1
+  business_identity: MyString
+  image_url: MyString
+  name: MyString
+  title: MyString
+  rating: 1.5
+  url: MyString
+  address: MyText
+  phone: MyString
+  distance: 1.5
+  open: 1
+  close: 1
