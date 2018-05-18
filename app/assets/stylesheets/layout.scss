@@ -1,0 +1,70 @@
+@mixin box {
+    border-radius: 25px;
+    width: 400px;
+    height: 200px;
+    box-shadow: 8px 8px 6px #262626;
+    font-family: $body-font-stack;
+}
+
+@mixin form-body {
+    font-family: $body-font-stack;
+    font-size: 20px;
+    color: $form-primary;
+}
+
+@mixin subheader {
+    font-family: $header-font-stack;
+    font-size: 40px;
+}
+
+.header {
+    background-color: $header-color;
+}
+
+#header-image {
+    opacity: 0.3;
+}
+
+.body {
+    background-color: $background-color;
+}
+
+h1 {
+    font-family: $header-font-stack;
+    color: $header-color;
+}
+
+// input text for login, sign-up, and schedule forms
+.form {
+    include: form-body;
+}
+
+.schedule-box {
+    include: box;
+    background-color: $header-font-color;
+}
+
+.destination-box {
+    include: box;
+    background-color: $destination_color;
+}
+
+.dining-box {
+    include: box;
+    background-color: $dining-color;
+}
+
+.login-box {
+    border-radius: 25px;
+    width: 400px;
+    height: 400px;
+    box-shadow: 8px 8px 6px #262626;
+    font-family: $body-font-stack;
+    background-color: $dining-color;
+}
+
+#login-header {
+    include: subheader;
+    color: $header-color;
+    text-shadow: rgba(84, 84, 84, 1.00) 0px -1px 4px;
+}
