@@ -1,0 +1,40 @@
+@mixin box {
+    border-radius: 25px;
+    width: 400px;
+    height: 200px;
+    box-shadow: 8px 8px 6px #262626;
+}
+
+@mixin form-body {
+    font-family: $body-font-stack;
+    font-size: 20px;
+    color: $form-primary;
+}
+
+.header {
+    background-color: $header-color;
+}
+
+.body {
+    background-color: $background-color;
+}
+
+h1 {
+    font-family: $header-font-stack;
+    color: $header-color;
+}
+
+// input text for login, sign-up, and schedule forms
+.form {
+    include: form-body;
+}
+
+.destination-box {
+    include: box;
+    background-color: $destination_color;
+}
+
+.dining-box {
+    include: box;
+    background-color: $dining-color;
+}
