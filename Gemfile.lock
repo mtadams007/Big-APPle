@@ -185,10 +185,7 @@ GEM
     simple_form (4.0.0)
       actionpack (> 4)
       activemodel (> 4)
-<<<<<<< HEAD
-=======
     simple_oauth (0.3.1)
->>>>>>> a83e5fbf80c3656e20e40cef96a19e481c722da7
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
