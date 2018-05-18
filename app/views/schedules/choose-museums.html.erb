@@ -1,0 +1,20 @@
+<div class="choose-museum-header">Choose two museums
+</div>
+
+<div class="choose-museum">
+    <div class="schedule-box"></div>
+        <%= simple_form_for @user do |f| %>
+        <%= f.input_field :choose, as: :boolean, boolean_style: :inline %>
+</div>
+
+<div class="choose-museum">
+    <div class="schedule-box"></div>
+        <%= f.input_field :choose, as: :boolean, boolean_style: :inline %>
+</div>
+
+<div class="choose-museum">
+    <div class="schedule-box"></div>
+        <%= f.input_field :choose, as: :boolean, boolean_style: :inline %>
+        <%= f.button :submit %>
+        <% end %>
+</div>

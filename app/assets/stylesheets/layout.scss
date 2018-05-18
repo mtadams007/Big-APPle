@@ -48,6 +48,28 @@ h1 {
     border-radius: 0;
 }
 
+.choose-museum-header {
+    @include subheader;
+}
+
+.choose-museum {
+    display: flex;
+}
+
+.schedule-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-header {
+    @include subheader;
+    color: $dining-color;
+    padding: 5px;
+    border-radius: 25px;
+    box-shadow: 8px 8px 6px #262626;
+    background-color: $header-color;
+}
+
 .schedule-box {
     @include box;
     background-color: $header-font-color;
