@@ -5,11 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Comfortaa|Karla" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <div class="header">
+  <img id="header-image" src="images/new-york-city-skyline.png" alt="New York City Skyline">
+  </div>
   <div class="body">
   
     <%= yield %>
