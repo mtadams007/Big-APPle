@@ -80,6 +80,24 @@ h1 {
     transform: rotate(350deg);
 }
 
+//animation to fade in text from the right
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-fade {
+    opacity: 0;
+    animation: fade-in-right ease 0.4s forwards;
+    animation-delay: 0.8s;
+}
+
 .schedule-box {
     @include box;
     background-color: $header-font-color;
