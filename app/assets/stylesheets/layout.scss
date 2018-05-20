@@ -36,21 +36,80 @@ h1 {
 
 // input text for login, sign-up, and schedule forms
 .form {
-    include: form-body;
+    @include form-body;
+}
+
+.simple_form div.input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.choose-museum-header {
+    @include subheader;
+}
+
+.choose-museum {
+    display: flex;
+}
+
+.schedule-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card__corner .card__corner-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 2em 2em 0;
+    border-color: transparent #f1f2f2 transparent transparent;
+}
+
+.schedule-header {
+    @include subheader;
+    color: $dining-color;
+    padding: 5px;
+    border-radius: 25px;
+    box-shadow: 8px 8px 6px #262626;
+    background-color: $header-color;
+    transform: rotate(350deg);
+}
+
+//animation to fade in text from the right
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-fade {
+    opacity: 0;
+    animation: fade-in-right ease 0.4s forwards;
+    animation-delay: 0.8s;
 }
 
 .schedule-box {
-    include: box;
+    @include box;
     background-color: $header-font-color;
 }
 
 .destination-box {
-    include: box;
+    @include box;
     background-color: $destination_color;
 }
 
 .dining-box {
-    include: box;
+    @include box;
     background-color: $dining-color;
 }
 
@@ -64,7 +123,118 @@ h1 {
 }
 
 #login-header {
-    include: subheader;
+    @include subheader;
     color: $header-color;
     text-shadow: rgba(84, 84, 84, 1.00) 0px -1px 4px;
+}
+
+.hint {
+    font-family: $body-font-stack;
+    font-weight: $light;
+    color: #f2f2f2;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.taxi {
+    position: relative;
+    -webkit-animation: taxi 5s;
+    animation: taxi 5s;
+}
+
+//animation to slide taxi in from right to left
+@keyframes taxi {
+    0.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 200, 0, 1, 1);
+    }
+    3.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 190.1, 0, 1, 1);
+    }
+    6.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 180.2, 0, 1, 1);
+    }
+    10.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 170, 0, 1, 1);
+    }
+    13.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 160.1, 0, 1, 1);
+    }
+    16.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 150.2, 0, 1, 1);
+    }
+    20.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 140, 0, 1, 1);
+    }
+    23.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 130.1, 0, 1, 1);
+    }
+    26.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 120.2, 0, 1, 1);
+    }
+    30.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 110, 0, 1, 1);
+    }
+    33.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 100.1, 0, 1, 1);
+    }
+    36.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 90.2, 0, 1, 1);
+    }
+    40.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 80, 0, 1, 1);
+    }
+    43.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 70.1, 0, 1, 1);
+    }
+    46.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 60.2, 0, 1, 1);
+    }
+    50.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 50, 0, 1, 1);
+    }
+    53.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 40.1, 0, 1, 1);
+    }
+    56.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 30.2, 0, 1, 1);
+    }
+    60.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 20, 0, 1, 1);
+    }
+    63.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10.1, 0, 1, 1);
+    }
+    66.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.2, 0, 1, 1);
+    }
+    70.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10, 0, 1, 1);
+    }
+    73.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -19.9, 0, 1, 1);
+    }
+    76.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -29.8, 0, 1, 1);
+    }
+    80.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -40, 0, 1, 1);
+    }
+    83.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -49.9, 0, 1, 1);
+    }
+    86.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -59.8, 0, 1, 1);
+    }
+    90.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -70, 0, 1, 1);
+    }
+    93.33% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -79.9, 0, 1, 1);
+    }
+    96.67% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -89.8, 0, 1, 1);
+    }
+    100.00% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0, 1, 1);
+    }
 }
