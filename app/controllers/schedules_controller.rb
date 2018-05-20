@@ -1,12 +1,13 @@
 class SchedulesController < ApplicationController
   def index
     # the header saves the api token, Authorization => Bearer makes it a bearer token
-    @museums = HTTParty.get('https://api.yelp.com/v3/businesses/search?categories=museums&location=11238', headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-    puts @museums
+    @museum = HTTParty.get('https://api.yelp.com/v3/businesses/search?categories=museums&term=science&location=manhattan', headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
+
+    puts '.....................'
+    puts @museum["businesses"][1]["name"]
     puts '.....................'
     puts '.....................'
-    puts '.....................'
-    puts @museums
+
   end
 
     puts "*********************************"
