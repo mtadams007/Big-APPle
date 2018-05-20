@@ -61,6 +61,7 @@ h1 {
     flex-direction: column;
 }
 
+//these two classes are styling the header on the schedule boxes
 .card .card__corner .card__corner-triangle {
     position: absolute;
     width: 0;
@@ -98,6 +99,7 @@ h1 {
     animation-delay: 0.8s;
 }
 
+//the four main boxes that will hold text content on the site
 .schedule-box {
     @include box;
     background-color: $header-font-color;
@@ -128,6 +130,7 @@ h1 {
     text-shadow: rgba(84, 84, 84, 1.00) 0px -1px 4px;
 }
 
+//the hint sits below an input field and advises the user the format for entry
 .hint {
     font-family: $body-font-stack;
     font-weight: $light;
@@ -136,13 +139,13 @@ h1 {
     font-size: 12px;
 }
 
+//animation to slide taxi in from right to left
 .taxi {
     position: relative;
     -webkit-animation: taxi 5s;
     animation: taxi 5s;
 }
 
-//animation to slide taxi in from right to left
 @keyframes taxi {
     0.00% {
         transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 200, 0, 1, 1);
