@@ -13,5 +13,6 @@ class SchedulesController < ApplicationController
   end
 
   def show
+    @schedule = Schedule.new
   end
 end
