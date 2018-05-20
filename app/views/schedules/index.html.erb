@@ -6,5 +6,6 @@
 <div class="schedule-box"></div>
 </div>
 
-
-
+<%= form_tag("/schedules/create_from_yelp", method: "post") do%>
+<%= submit_tag %>
+<%end%>
