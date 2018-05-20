@@ -1,2 +1,3 @@
-class Activity < ApplicationRecord
-end
+class Activity < ApplicationRecord 
+    belongs_to :schedule  
+end 

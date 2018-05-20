@@ -1,3 +1,4 @@
-class Schedule < ApplicationRecord
-    belongs_to :user
-end
+class Schedule < ApplicationRecord 
+    belongs_to :user 
+    has_many :activities  
+end 

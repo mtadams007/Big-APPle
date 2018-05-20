@@ -1,0 +1,30 @@
+<!-- Modal --> 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <h5 class="modal-title" id="exampleModalLabel" id="login-header">Create your Big APPle account</h5> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+          <span aria-hidden="true">&times;</span> 
+        </button> 
+      </div> 
+      <div class="modal-body"> 
+        <%= simple_form_for @user do defaults: { input_html: { class: 'form' } } |f| %> 
+          <%= f.input :first_name, placeholder: 'First name' %> 
+          <%= f.input :last_name, placeholder: 'Last name' %> 
+          <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90, 
+                              end_year: Date.today.year - 12, discard_day: true, 
+                              order: [:month, :year] %> 
+          <%= f.input :email, placeholder: 'Enter email' %> 
+          <%= f.input :password, placeholder: 'Password', input_html: { maxlength: 20 } %> 
+          <%= f.input :password_confirmation, placeholder: 'Confirm password' %> 
+          <%= f.button :submit %> 
+    <% end %> 
+      </div> 
+      <div class="modal-footer"> 
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+        <button type="button" class="btn btn-primary">Save changes</button> 
+      </div> 
+    </div> 
+  </div> 
+</div>
