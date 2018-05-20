@@ -7,6 +7,13 @@ class SchedulesController < ApplicationController
     puts '.....................'
 
   end
+  def create_from_yelp
+    puts '.....................'
+    puts '.....................'
+    puts "howdy"
+    puts '.....................'
+
+  end
 
   def new
     @schedule = Schedule.new
