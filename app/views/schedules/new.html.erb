@@ -1,14 +1,16 @@
 
+<div class="planning-form">
+    <%= simple_form_for @user do |f| %>
+        <%= f.input :morning_museum_visit, collection: ["Art", "History", "Science", "No Preference"] %>
+        <%= f.text :lunch_food, label: 'Lunch' %>
+        <%= f.hint 'e.g. Mexican, Chinese, pizza', class: "hint" %>
+    <% end %>
+</div>
 
-<%= simple_form_for @user do |f| %>
-  <%= f.input :morning_museum_visit, collection: ["Art", "History", "Science", "No Preference"] %>
-  <%= f.text :lunch_food %>
-  <%= f.hint 'e.g. Mexican, Chinese, pizza', class: "hint" %>
-
-  <%= f.input :afternoon_museum_visit, collection: ["Art", "History", "Science", "No Preference"] %>
-  <%= f.text :dinner_food %>
-  <%= f.hint 'e.g. Mexican, Chinese, pizza', class: "hint" %>
-
-
-
-<% end %>
+<div class="planning-form">
+    <%= simple_form_for @user do |f| %>
+        <%= f.input :afternoon_museum_visit, collection: ["Art", "History", "Science", "No Preference"] %>
+        <%= f.text :dinner_food, label: 'Dinner' %>
+        <%= f.hint 'e.g. Mexican, Chinese, pizza', class: "hint" %>
+    <% end %>
+</div>

@@ -48,6 +48,56 @@ h1 {
     border-radius: 0;
 }
 
+.choose-museum-header {
+    @include subheader;
+}
+
+.choose-museum {
+    display: flex;
+}
+
+.schedule-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card__corner .card__corner-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 2em 2em 0;
+    border-color: transparent #f1f2f2 transparent transparent;
+}
+
+.schedule-header {
+    @include subheader;
+    color: $dining-color;
+    padding: 5px;
+    border-radius: 25px;
+    box-shadow: 8px 8px 6px #262626;
+    background-color: $header-color;
+    transform: rotate(350deg);
+}
+
+//animation to fade in text from the right
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-fade {
+    opacity: 0;
+    animation: fade-in-right ease 0.4s forwards;
+    animation-delay: 0.8s;
+}
+
 .schedule-box {
     @include box;
     background-color: $header-font-color;
