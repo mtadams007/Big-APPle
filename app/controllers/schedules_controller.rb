@@ -9,6 +9,12 @@ class SchedulesController < ApplicationController
     puts @museums
   end
 
+    puts "*********************************"
+    @museums = HTTParty.get('https://api.yelp.com/v3/businesses/search?categories=museums&location=10038')
+    puts "*********************************"
+
+  end 
+
     # def search
 
     #   parameters = { term: params[:term], limit: 16 }
