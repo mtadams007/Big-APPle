@@ -5,16 +5,17 @@
 <div class="choose-schedule-box">
 <%= form_tag("/activities/index", method: "post") do %>
 <%= label_tag :term, "Morning Museum Type" %>
-<%= text_field_tag :term, nil, placeholder: 'e.g.art', class: 'input input-large' %>
-<%= label_tag :location, "Hotel zipcode" %>
-<%= text_field_tag :location, nil, placeholder: 'e.g. 10001', class: 'input' %>
+<%= text_field_tag :term, nil, size: '21', placeholder: 'e.g.art', class: 'input' %>
+<%= label_tag :location, "Hotel Zipcode" %>
+<%= text_field_tag :location, nil, size: '30', placeholder: 'e.g. 10001', class: 'input' %>
 <%= label_tag :lunch, "Lunch Cuisine" %>
-<%= text_field_tag :lunch, nil, placeholder: 'enter one type of cuisine', class: 'input input-large' %>
+<%= text_field_tag :lunch, nil, size: '29', placeholder: 'enter one type of cuisine', class: 'input input-large' %>
 <%= label_tag :term2, "Afternoon Museum Type" %>
 <%= text_field_tag :term2, nil, placeholder: 'e.g. history', class: 'input' %>
 <%= label_tag :dinner, "Dinner Cuisine" %>
-<%= text_field_tag :dinner, nil, placeholder: 'enter one type of cuisine', class: 'input' %>
+  
+<%= text_field_tag :dinner, nil, size: '29', placeholder: 'enter one type of cuisine', class: 'input' %><br>
+<div id="submit"><%= submit_tag "Go!", class: 'schedule-button' %></div>
 
-<%= submit_tag %>
 <%end%>
 </div>

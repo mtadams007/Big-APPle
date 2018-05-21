@@ -1,1 +1,16 @@
+<h1><%=@first_museum['name']%><h1>
+<% @time_slot = 'Morning'%>
+<%=render 'form', locals: {@time_slot=> 'Morning'} %>
 
+
+<h2><%=@restaurant['businesses'][0]['name']%></h2>
+
+<%=render 'form', locals: {@time_slot=> 'Lunch'}  %>
+
+<h1><%=@second_museum['name']%><h1>
+
+<%=render 'form', locals: {@time_slot=> 'Afternoon'}  %>
+
+<h2><%=@restaurant2['businesses'][0]['name']%></h2>
+
+<%=render 'form', locals: {@time_slot=> 'Dinner'}  %>
