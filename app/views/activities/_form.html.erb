@@ -1,6 +1,6 @@
-<%= simple_form_for @activity do |f| %>
+<%= simple_form_for @activity, remote:true do |f| %>
   <%= f.hidden_field :schedule_id, value: 1 %>
-  <%= f.hidden_field :time_slot, value: "Morning" %>
+  <%= f.hidden_field :time_slot, value: @time_slot %>
   <%= f.hidden_field :business_identity, value: @museums['businesses'][0] %>
   <%= f.hidden_field :image_url, value: @museums['businesses'][0]['image_url'] %>
   <%= f.hidden_field :name, value: @museums['businesses'][0]['name'] %>
