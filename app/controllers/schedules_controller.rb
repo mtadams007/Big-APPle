@@ -14,8 +14,14 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    # @schedule = Schedule.new
+    @schedule = Schedule.new
+    @current_user = current_user
   end
+
+  def create 
+    Schedule.create(schedule_params)
+    redirect_to "/schedules"
+  end 
 
   def show
     # @schedule = Schedule.find(params[:id])
