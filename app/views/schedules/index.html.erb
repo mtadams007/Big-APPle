@@ -7,8 +7,15 @@
 </div>
 
 <%= form_tag("/schedules/create_from_yelp", method: "post") do%>
+<%= label_tag(:term, "Morning Museum Type") %>
 <%= text_field_tag(:term)%>
+<%= label_tag(:location, "Hotel location") %>
 <%= text_field_tag(:location)%>
-<%= text_field_tag(:food)%>
+<%= label_tag(:lunch, "Lunch Cuisine") %>
+<%= text_field_tag(:lunch)%>
+<%= label_tag(:term2, "Afternoon Museum Type") %>
+<%= text_field_tag(:term2)%>
+<%= label_tag(:dinner, "Dinner Cuisine") %>
+<%= text_field_tag(:dinner)%>
 <%= submit_tag %>
 <%end%>
