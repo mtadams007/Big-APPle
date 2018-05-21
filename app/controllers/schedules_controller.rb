@@ -9,14 +9,8 @@ class SchedulesController < ApplicationController
     @museums = HTTParty.get("https://api.yelp.com/v3/businesses/search?terms=#{params[:term]}&categories=museums&location=#{params[:location]}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
     puts params[:term]
     puts params[:location]
-<<<<<<< Updated upstream
-    puts '.....................'
     @restaurant = HTTParty.get("https://api.yelp.com/v3/businesses/search?terms=#{params[:term]}&categories=#{params[:food]}&location=#{@museums['businesses'][0]['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-
-
-=======
     puts @museums
->>>>>>> Stashed changes
   end
 
   def new
