@@ -1,29 +1,13 @@
-<h2>Sign up</h2>
+<div class="signup-box"> 
+  <h2 id="login-header">Sign Up</h2> 
+ 
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
+    <%= f.input :email, label: false, placeholder: 'Enter email' %> 
+    <%= f.input :password, label: false, placeholder: 'Password' %> 
+    <%= f.input :password_confirmation, label: false, placeholder: 'Confirm password' %>
+    <%= f.button :submit, "Sign Up", class: "login-button" %> 
+  <% end %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render "devise/shared/links" %> 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

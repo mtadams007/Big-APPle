@@ -4,7 +4,7 @@
     border-radius: 25px;
     width: 400px;
     height: 200px;
-    box-shadow: 8px 8px 6px #262626;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     font-family: $body-font-stack;
 }
 
@@ -17,6 +17,23 @@
 @mixin subheader {
     font-family: $header-font-stack;
     font-size: 40px;
+}
+
+@mixin button {
+    background-color: $background-color !important;
+    color: $header-color;
+    border-radius: 5px !important;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00) !important;
+}
+
+@mixin login-signup {
+    border-radius: 25px;
+    width: 400px;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    margin: 0px auto 0px auto;
+    padding: 10px 20px 10px 20px;
+    font-family: $body-font-stack;
+    background-color: $header-font-color;
 }
 
 .header {
@@ -32,9 +49,33 @@
     height: auto;
 }
 
+.header-text {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 8px;
+    left: 110px;
+}
+
+.header-text-grey {
+    font-family: $header-font-stack;
+    color: $header-grey;
+    font-size: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-text-yellow {
+    font-family: $header-font-stack;
+    color: $header-font-color;
+    font-size: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
 .body {
     min-height: 100vh;
-    margin: 0;
+    margin: auto;
     padding: 0;
     background-image: linear-gradient(180deg, #CCC6C0 0%, #8E9AAF 100%);
     background-position: center;
@@ -58,10 +99,10 @@ h1 {
     @include form-body;
 }
 
-.simple_form div.input {
+.simple_form input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid $header-color;
     -webkit-box-shadow: none;
     box-shadow: none;
     border-radius: 0;
@@ -76,13 +117,16 @@ h1 {
     flex-direction: row;
 }
 
-.schedule-layout {
-    display: flex;
-    flex-direction: column;
+.schedule-page {
+    margin-top: 0px;
 }
 
+.schedule-layout-morning {}
+
+.schedule-layout-afternoon {}
+
 //these two classes are styling the header on the schedule boxes
-.card .card__corner .card__corner-triangle {
+.card .card-corner .card-corner-triangle {
     position: absolute;
     width: 0;
     height: 0;
@@ -91,17 +135,29 @@ h1 {
     border-color: transparent #f1f2f2 transparent transparent;
 }
 
-.schedule-header {
+.schedule-header-morning {
     @include subheader;
-    color: $dining-color;
+    color: $header-grey;
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
     padding: 5px;
-    border-radius: 25px;
-    box-shadow: 8px 8px 6px #262626;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-color;
     transform: rotate(350deg);
 }
 
-//animation to fade in text from the right
+.schedule-header-afternoon {
+    @include subheader;
+    color: $header-grey;
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
+    padding: 5px;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    background-color: $header-color;
+    transform: rotate(350deg);
+} //animation to fade in text from the right
 @keyframes fade-in-right {
     from {
         opacity: 0;
@@ -117,9 +173,7 @@ h1 {
     opacity: 0;
     animation: fade-in-right ease 0.4s forwards;
     animation-delay: 0.8s;
-}
-
-//the four main boxes that will hold text content on the site
+} //the four main boxes that will hold text content on the site
 .schedule-box {
     @include box;
     background-color: $header-font-color;
@@ -128,21 +182,36 @@ h1 {
 
 .destination-box {
     @include box;
-    background-color: $destination_color;
+    background-color: $header-font-color;
+    margin: 0px auto 50px auto;
 }
 
 .dining-box {
     @include box;
-    background-color: $dining-color;
+    background-color: $header-font-color;
+    margin: 0px auto 50px auto;
+}
+
+.login-background-image {
+    /* The image used */
+    background-image: url("new-york-night-skyline.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10000000;
 }
 
 .login-box {
-    border-radius: 25px;
-    width: 400px;
-    height: 400px;
-    box-shadow: 8px 8px 6px #262626;
-    font-family: $body-font-stack;
-    background-color: $dining-color;
+    @include login-signup;
+    height: 300px;
+}
+
+.signup-box {
+    @include login-signup;
+    height: 350px;
 }
 
 #login-header {
@@ -151,19 +220,37 @@ h1 {
     text-shadow: rgba(84, 84, 84, 1.00) 0px -1px 4px;
 }
 
-//the hint sits below an input field and advises the user the format for entry
+.signup {
+    font-family: $body-font-stack;
+    color: $header-color;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $background-color;
+}
+
+.login-button {
+    @include button;
+    margin: 0px 0px 20px 5px;
+}
+
+.signup-button {
+    @include button;
+    margin: 0px 0px 20px 5px;
+} //the hint sits below an input field and advises the user the format for entry
 .hint {
     font-family: $body-font-stack;
     font-weight: $light;
     color: #f2f2f2;
     font-style: italic;
     font-size: 12px;
-}
-
-//animation to slide taxi in from right to left
+} //animation to slide taxi in from right to left
 .taxi {
     position: absolute;
-    -webkit-animation: taxi 5s forwards;
+    -webkit-animation: taxi 8s forwards;
     top: 225px;
 }
 
@@ -182,4 +269,12 @@ h1 {
         display: none;
     }
     /*off-screen right*/
+}
+
+#footer {
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    height: 100px;
+    background-color: $header-font-color;
 }
