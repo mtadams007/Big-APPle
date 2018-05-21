@@ -158,6 +158,8 @@ input.body {
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-color;
     transform: rotate(350deg);
+    margin: 0px 0px -30px 40px;
+    border-radius: 10px;
 }
 
 .schedule-header-afternoon {
@@ -170,7 +172,11 @@ input.body {
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-color;
     transform: rotate(350deg);
-} //animation to fade in text from the right
+    margin: 0px 0px -30px 40px;
+    border-radius: 10px;
+}
+
+//animation to fade in text from the right
 @keyframes fade-in-right {
     from {
         opacity: 0;
@@ -273,13 +279,50 @@ a:hover {
     font-size: 12px;
 }
 
+.sample-schedule-box {
+    background-color: $header-font-color;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    border-radius: 25px;
+    width: 800px;
+    height: 60px;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sample-schedule-text {
+    font-family: $header-font-stack;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 0px 10px 0px;
+}
+
+.create-schedule-button {
+    background-color: $header-font-color;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    border-radius: 25px;
+    width: 800px;
+    height: 60px;
+    margin: 0px auto 0px auto;
+    text-align: center;
+}
+
+.create-schedule-text {
+    font-family: $header-font-stack;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 0px 10px 0px;
+}
+
 .create-box {
     background-color: $header-font-color;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     border-radius: 25px;
     width: 500px;
     height: 60px;
-    margin: 0px auto 20px auto;
+    margin: 0px auto 40px auto;
 }
 
 .create-box-text {
@@ -288,6 +331,21 @@ a:hover {
     text-align: center;
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
+}
+
+.schedule-button {
+    color: $header-color;
+    border-radius: 5px !important;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00) !important;
+    background-color: #00e600;
+    font-size: 30px;
+    width: 100px;
+    margin: 20px auto 0px auto;
+}
+
+#submit {
+    width: 50%;
+    margin: 0 auto;
 }
 
 //animation to slide taxi in from right to left
@@ -320,4 +378,10 @@ a:hover {
     position: relative;
     height: 100px;
     background-color: $header-font-color;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

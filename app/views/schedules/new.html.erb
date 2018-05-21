@@ -1,7 +1,33 @@
 
+<div class="sample-schedule-box">
+<div class="sample-schedule-text">Check out a sample itinerary</div>
+</div>
+
+<div class="schedule-page">
+
+<div class="container-fluid">
+    <div class="row">
+
+    <div class="schedule-layout-morning col-sm-6">
+        <div class="schedule-header-morning" class="card" class="card-corner" class="card-corner-triangle">Morning</div>
+        <div class="destination-box"></div>
+        <div class="dining-box"></div>
+    </div>
+
+    <div class="schedule-layout-afternoon col-sm-6">
+        <div class="schedule-header-afternoon">Afternoon</div>
+        <div class="destination-box"></div>
+        <div class="dining-box"></div>
+    </div>
+
+    </div>
+</div>
+
+</div>
+
 <div class="planning-form">
     <%= simple_form_for @schedule do |f| %>
         <%= f.hidden_field :user_id, value: @current_user.id %>
-        <%= f.submit %>
+     <div class="create-schedule-button">   <%= f.submit "Click here to create a day in NYC", class: 'create-schedule-text' %> </div>
     <% end %>
 </div>
