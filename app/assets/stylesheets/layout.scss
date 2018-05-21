@@ -108,6 +108,19 @@ h1 {
     border-radius: 0;
 }
 
+.input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $header-color;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+input.body {
+    width: 95%;
+}
+
 .choose-museum-header {
     @include subheader;
 }
@@ -204,6 +217,17 @@ h1 {
     z-index: 10000000;
 }
 
+.choose-schedule-box {
+    border-radius: 25px;
+    width: 400px;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    margin: 0px auto 0px auto;
+    padding: 20px 20px 20px 20px;
+    font-family: $body-font-stack;
+    background-color: $header-font-color;
+    height: 300px;
+}
+
 .login-box {
     @include login-signup;
     height: 300px;
@@ -247,7 +271,26 @@ a:hover {
     color: #f2f2f2;
     font-style: italic;
     font-size: 12px;
-} //animation to slide taxi in from right to left
+}
+
+.create-box {
+    background-color: $header-font-color;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    border-radius: 25px;
+    width: 500px;
+    height: 60px;
+    margin: 0px auto 20px auto;
+}
+
+.create-box-text {
+    font-family: $header-font-stack;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 0px 10px 0px;
+}
+
+//animation to slide taxi in from right to left
 .taxi {
     position: absolute;
     -webkit-animation: taxi 8s forwards;
