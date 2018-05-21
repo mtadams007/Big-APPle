@@ -24,7 +24,7 @@
 }
 
 #header-image {
-    opacity: 0.3;
+    opacity: 0.2;
     position: relative;
     top: 0;
     left: 0;
@@ -33,17 +33,19 @@
 }
 
 .body {
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: $background-color;
+    background-image: linear-gradient(180deg, #CCC6C0 0%, #8E9AAF 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: $background-color;
 }
 
 h1 {
@@ -161,9 +163,7 @@ h1 {
 //animation to slide taxi in from right to left
 .taxi {
     position: absolute;
-    -webkit-animation: taxi 10s;
-    animation-delay: 1s;
-    animation: taxi 5s;
+    -webkit-animation: taxi 5s forwards;
     top: 225px;
 }
 
