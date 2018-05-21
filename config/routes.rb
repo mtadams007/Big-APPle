@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/sign_in'
   post 'schedules/create_from_yelp'
+  # get 'schedules/create_from_yelp'
+
   resources :schedules
   resources :activities
   resources :users
