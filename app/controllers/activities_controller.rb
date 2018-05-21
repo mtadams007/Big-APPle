@@ -19,10 +19,8 @@ class ActivitiesController < ApplicationController
     end
     @restaurant2 = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:dinner]}&location=#{@second_museum['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
     @activity = Activity.new
-
     @current_user = current_user
-
-   end
+  end
 
   def new
     @activity = Activity.new
