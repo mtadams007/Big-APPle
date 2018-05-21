@@ -13,5 +13,6 @@
 <%= form_tag("/schedules/create_from_yelp", method: "post") do%>
 <%= text_field_tag(:term)%>
 <%= text_field_tag(:location)%>
+<%= text_field_tag(:food)%>
 <%= submit_tag %>
 <%end%>
