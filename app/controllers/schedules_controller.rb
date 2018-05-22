@@ -6,14 +6,7 @@ class SchedulesController < ApplicationController
   end
 
   def create_from_yelp
-    @museums = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{params[:term]}&categories=museums&location=#{params[:location]}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-    puts params[:term]
-    puts params[:location]
-    @restaurant = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:lunch]}&location=#{@museums['businesses'][0]['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-    @museums2 = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{params[:term2]}&categories=museums&location=#{params[:location]}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-    @restaurant2 = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:dinner]}&location=#{@museums2['businesses'][0]['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
 
-    redirect_to '/activities/new'
   end
 
   def new
@@ -27,11 +20,21 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    # @schedule = Schedule.find(params[:id])
-    # @current_user = current_user.find(params[:id])
+    # We grab the current schedule so we can see what there is on it
+    @schedule = Schedule.find(params[:id])
+    # We find the user currently logged in
+    @current_user = current_user
+    # These are all the activities that belong to the given schedule
+    @activities = @schedule.activities
+    # The two museums and restaurants that are chosen for the user
+    @museum1 = @activities.find_by(time_slot: 'Morning')
+    @restaurant1 = @activities.find_by(time_slot: 'Lunch')
+    @museum2 = @activities.find_by(time_slot: 'Afternoon')
+    @restaurant2 = @activities.find_by(time_slot: 'Dinner')
   end
 
   private
+  # A schedule only takes in one param, the user_id.  It is in essence an empty box where we put our activities
   def schedule_params
     params.require(:schedule).permit(:user_id)
   end
