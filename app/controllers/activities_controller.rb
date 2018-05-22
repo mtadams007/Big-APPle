@@ -46,11 +46,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    Activity.create(activity_params)
+    Activity.create(activity_params) 
   end
 
   private
     def activity_params
-      params[:activity].permit(:time_slot, :business_identity, :schedule_id, :image_url, :name, :title, :rating, :url, :address, :phone, :distance)
+      params[:activity].permit(:time_slot, :business_identity, :schedule_id, :image_url, :name, :title, :rating, :url, :address, :phone, :distance, :latitude, :longitude)
     end
   end

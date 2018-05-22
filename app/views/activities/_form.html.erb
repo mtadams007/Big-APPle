@@ -12,5 +12,7 @@
   <%= f.hidden_field :address, value: @business['location']['display_address'] %>
   <%= f.hidden_field :phone, value: @business['display_phone'] %>
   <%= f.hidden_field :distance, value: @business['distance'] %>
+  <%= f.hidden_field :latitude, value: @business['coordinates']['latitude'] %>
+  <%= f.hidden_field :longitude, value: @business['coordinates']['longitude'] %>
   <%= f.submit "Choose Activity", class: 'schedule-submit-button' %>
 <% end %>
