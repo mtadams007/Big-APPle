@@ -226,6 +226,7 @@ input.body {
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-font-color;
     margin: 0px auto 50px auto;
+    opacity: 1 !important;
 }
 
 .museum-name {
@@ -290,14 +291,32 @@ input.body {
     justify-content: center;
 }
 
+.time-of-day {
+    font-family: $header-font-stack;
+    color: $form-primary;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    height: 100px;
+    padding: 10px 10px 0px 10px;
+}
+
 .morning-schedule {
-    padding: 0px;
+    padding: 10px;
     margin: 0px auto 50px auto;
+    border-radius: 25px;
+    background-color: rgba(100, 112, 117, 0.34);
+    width: 400px;
+    margin-top: 10px;
 }
 
 .afternoon-schedule {
-    padding: 0px;
+    padding: 10px;
     margin: 0px auto 50px auto;
+    border-radius: 25px;
+    background-color: rgba(100, 112, 117, 0.34);
+    width: 400px;
+    margin-top: 10px;
 }
 
 .dining-box {
