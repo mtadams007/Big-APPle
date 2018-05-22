@@ -1,16 +1,25 @@
 <h1><%=@first_museum['name']%><h1>
-<% @time_slot = 'Morning'%>
-<%=render 'form', locals: {@time_slot=> 'Morning'} %>
+
+<% @schedule_id = @current_user.schedules.last.id%>
+
+<% @business = @first_museum %>
+<% @time_slot = 'Morning' %>
+<%=render 'form' %>
 
 
 <h2><%=@restaurant['businesses'][0]['name']%></h2>
-
-<%=render 'form', locals: {@time_slot=> 'Lunch'}  %>
+<% @business = @restaurant['businesses'][0] %>
+<% @time_slot = 'Lunch' %>
+<%=render 'form'%>
 
 <h1><%=@second_museum['name']%><h1>
-
-<%=render 'form', locals: {@time_slot=> 'Afternoon'}  %>
+  <% @business = @second_museum %>
+<% @time_slot = 'Afternoon' %>
+<%=render 'form' %>
 
 <h2><%=@restaurant2['businesses'][0]['name']%></h2>
+<% @business = @restaurant2['businesses'][0] %>
+<% @time_slot = 'Dinner' %>
+<%=render 'form' %>
 
-<%=render 'form', locals: {@time_slot=> 'Dinner'}  %>
+<!-- Class:0x007f9a3ee3e4c0 -->

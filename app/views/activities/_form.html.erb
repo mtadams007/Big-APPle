@@ -1,14 +1,16 @@
+<h1><%= @time_slot %></h1>
+
 <%= simple_form_for @activity, remote:true do |f| %>
-  <%= f.hidden_field :schedule_id, value: 1 %>
+  <%= f.hidden_field :schedule_id, value: @schedule_id %>
   <%= f.hidden_field :time_slot, value: @time_slot %>
-  <%= f.hidden_field :business_identity, value: @museums['businesses'][0] %>
-  <%= f.hidden_field :image_url, value: @museums['businesses'][0]['image_url'] %>
-  <%= f.hidden_field :name, value: @museums['businesses'][0]['name'] %>
-  <%= f.hidden_field :title, value: @museums['businesses'][0]['categories'][0]['title'] %>
-  <%= f.hidden_field :rating, value: @museums['businesses'][0]['rating'] %>
-  <%= f.hidden_field :url, value: @museums['businesses'][0]['url'] %>
-  <%= f.hidden_field :address, value: @museums['businesses'][0]['location']['display_address'] %>
-  <%= f.hidden_field :phone, value: @museums['businesses'][0]['display_phone'] %>
-  <%= f.hidden_field :distance, value: @museums['businesses'][0]['distance'] %>
+  <%= f.hidden_field :business_identity, value: @business['id'] %>
+  <%= f.hidden_field :image_url, value: @business['image_url'] %>
+  <%= f.hidden_field :name, value: @business['name'] %>
+  <%= f.hidden_field :title, value: @business['categories'][0]['title'] %>
+  <%= f.hidden_field :rating, value: @business['rating'] %>
+  <%= f.hidden_field :url, value: @business['url'] %>
+  <%= f.hidden_field :address, value: @business['location']['display_address'] %>
+  <%= f.hidden_field :phone, value: @business['display_phone'] %>
+  <%= f.hidden_field :distance, value: @business['distance'] %>
   <%= f.submit %>
 <% end %>
