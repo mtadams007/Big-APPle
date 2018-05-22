@@ -206,6 +206,30 @@ input.body {
     margin: 0px auto 50px auto;
 }
 
+.museum-restaurant-box {
+    @include box;
+    background-color: $header-font-color;
+    margin: 0px auto 50px auto;
+}
+
+.museum-name {
+    font-family: $header-font-stack;
+    color: $form-primary;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 0px 10px 0px;
+}
+
+.restaurant-name {
+    font-family: $header-font-stack;
+    color: $header-color;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 0px 10px 0px;
+}
+
 .dining-box {
     @include box;
     background-color: $header-font-color;
@@ -329,6 +353,7 @@ a:hover {
 .create-box-text {
     font-family: $header-font-stack;
     font-size: 40px;
+    color: $form-primary;
     text-align: center;
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
