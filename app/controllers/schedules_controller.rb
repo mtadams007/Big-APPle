@@ -2,10 +2,11 @@ class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # the header saves the api token, Authorization => Bearer makes it a bearer token
+    @current_user = current_user
+    @schedules = @current_user.schedules
   end
 
-  def create_from_yelp
+  def choose_museums
 
   end
 
@@ -16,7 +17,7 @@ class SchedulesController < ApplicationController
 
   def create
     Schedule.create(schedule_params)
-    redirect_to "/schedules"
+    redirect_to "/schedules/choose_museums"
   end
 
   def show
