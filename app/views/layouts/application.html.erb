@@ -14,34 +14,37 @@
 
   <body>
     <div class="header">
-    
+
       <div class="header-text">
         <div class="header-text-grey">BIG <div class="header-text-yellow">APP</div>LE</div></div>
       <img id="header-image" src="/assets/new-york-city-skyline.png" alt="New York City Skyline">
-      <img src="/assets/cloud.png" class="logout-button" alt="Cloud Logout">
+      <% if user_signed_in? %>
+      <a href="<%=destroy_user_session_path%>" data-method="delete">
+      <img src="/assets/cloud.png" class="logout-button" alt="Cloud Logout"></a>
+      <%end%>
       </div>
-      
-      
+
+
     <div class="body">
     <div class="taxi">
       <img class="resize" src="/assets/taxi.png" alt="New York City Taxi">
     </div>
 
-    
 
-    
+
+
 
     <%= yield %>
     </div>
     <div id="footer">
       <div class="container">
         <div class="footer-block row">
-          
+
             <div class="social-icons"><img src="assets/twitter.png" class="icon" href="#" alt="Twitter"><img src="assets/facebook.png" class="icon" href="#" alt="Facebook"><img src="assets/instagram.png" href="#" class="icon" alt="Instagram">
               <div class="yelp">powered by <img src="assets/yelp.png" href="#" alt="Yelp Logo">
               </div>
             </div>
-          
+
         </div>
       </div>
     </div>
