@@ -1,31 +1,152 @@
-<div class="museum-restaurant-box">
-<div class="museum-name"><%=@first_museum['name']%></div>
+<div class="container-fluid">
+<div class="row">
+  <div class="morning-schedule col-sm-6">
+    <div class="museum-restaurant-box">
+      <div class="museum-name"><span class="glyphicon-glyphicon-education"></span> <%=@first_museum['name']%></div>
+      <div class="checkered-line row">
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      </div>
+      <div class="checkered-line row">
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
 
-<% @schedule_id = @current_user.schedules.last.id%>
+      </div>
 
-<% @business = @first_museum %>
-<% @time_slot = 'Morning' %>
-<%=render 'form' %>
+        <% @schedule_id = @current_user.schedules.last.id%>
+
+        <% @business = @first_museum %>
+          <% @time_slot = 'Morning' %>
+          <%=render 'form' %>
+    </div>
+
+    <div class="museum-restaurant-box">
+      <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
+        <% @business = @restaurant['businesses'][0] %>
+        <div class="checkered-line row">
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      </div>
+        <% @time_slot = 'Lunch' %>
+          <%=render 'form'%>
+    </div>
+  </div>
+
+
+
+
+  <div class="afternoon-schedule col-sm-6">
+  <div class="museum-restaurant-box">
+    <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
+      <% @business = @second_museum %>
+      <div class="checkered-line row">
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      </div>
+      <% @time_slot = 'Afternoon'%>
+        <%=render 'form' %>
+  </div>
+
+      <div class="museum-restaurant-box">
+        <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
+          <% @business = @restaurant2['businesses'][0] %>
+          <div class="checkered-line row">
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      <div class="white-square"></div>
+      <div class="black-square"></div>
+      </div>
+          <% @time_slot = 'Dinner'%>
+          <%=render 'form' %>
+      </div>
+  </div>
 </div>
-
-<div class="museum-restaurant-box">
-<div class="restaurant-name"><%=@restaurant['businesses'][0]['name']%></div>
-<% @business = @restaurant['businesses'][0] %>
-<% @time_slot = 'Lunch' %>
-<%=render 'form'%>
 </div>
-
-<div class="museum-restaurant-box">
-<div class="museum-name"><%=@second_museum['name']%></div>
-  <% @business = @second_museum %>
-<% @time_slot = 'Afternoon' %>
-<%=render 'form' %>
-</div>
-
-<div class="museum-restaurant-box">
-<div class="restaurant-name"><%=@restaurant2['businesses'][0]['name']%></div>
-<% @business = @restaurant2['businesses'][0] %>
-<% @time_slot = 'Dinner' %>
-<%=render 'form' %>
-</div>
-
