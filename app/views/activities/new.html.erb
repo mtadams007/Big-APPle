@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-<div class="museum-restaurant-box">
-<div class="museum-name"><%=@first_museum['name']%></div>
-
-<% @schedule_id = @current_user.schedules.last.id%>
-
-<% @business = @first_museum %>
-<% @time_slot = 'Morning' %>
-<%=render 'form' %>
-</div>
-
-<div class="museum-restaurant-box">
-<div class="restaurant-name"><%=@restaurant['businesses'][0]['name']%></div>
-<% @business = @restaurant['businesses'][0] %>
-<% @time_slot = 'Lunch' %>
-<%=render 'form'%>
-</div>
-
-<div class="museum-restaurant-box">
-<div class="museum-name"><%=@second_museum['name']%></div>
-  <% @business = @second_museum %>
-<% @time_slot = 'Afternoon' %>
-<%=render 'form' %>
-</div>
-
-<div class="museum-restaurant-box">
-<div class="restaurant-name"><%=@restaurant2['businesses'][0]['name']%></div>
-<% @business = @restaurant2['businesses'][0] %>
-<% @time_slot = 'Dinner' %>
-<%=render 'form' %>
-</div>
-
-=======
 <div class="container-fluid">
 <div class="row">
   <div class="morning-schedule col-sm-6">
@@ -183,4 +150,3 @@
   </div>
 </div>
 </div>
->>>>>>> master
