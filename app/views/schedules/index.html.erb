@@ -3,7 +3,7 @@
 </div>
 
 <div class="choose-schedule-box">
-<%= form_tag("/activities/index", method: "post") do %>
+<%= form_tag("/activities/new", method: "post") do %>
 <%= label_tag :term, "Morning Museum Type" %>
 <%= text_field_tag :term, nil, size: '21', placeholder: 'e.g.art', class: 'input' %>
 <%= label_tag :location, "Hotel Zipcode" %>
