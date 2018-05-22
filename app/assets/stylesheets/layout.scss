@@ -250,9 +250,10 @@ input.body {
 
 .time-slot {
     font-family: $body-font-stack;
-    font-size: 20px;
-    color: $header-grey;
+    font-size: 30px;
+    color: $header-color;
     text-align: center;
+    margin-top: 10px;
 }
 
 .schedule-submit-button {
