@@ -32,6 +32,22 @@ class SchedulesController < ApplicationController
     @restaurant1 = @activities.find_by(time_slot: 'Lunch')
     @museum2 = @activities.find_by(time_slot: 'Afternoon')
     @restaurant2 = @activities.find_by(time_slot: 'Dinner')
+
+    client = Uber::Client.new do |config|
+      config.server_token = ENV['UBER_API_KEY']
+      puts "HELLO HELLO HELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLO-------------"
+    end
+
+    @slat = @restaurant1.latitude
+    @slon = @restaurant1.longitude
+    @dlat = @museum2.latitude
+    @dlon = @museum2.longitude
+
+    puts "*-----------------------------------------------*"
+    puts "*-----------------------------------------------*"
+    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)
+    puts "*-----------------------------------------------*"
+    puts "*-----------------------------------------------*"
   end
 
   private
