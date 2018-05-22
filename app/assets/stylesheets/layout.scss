@@ -81,6 +81,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
 }
 
 body {
@@ -378,10 +379,33 @@ a:hover {
     position: relative;
     height: 100px;
     background-color: $header-font-color;
+    padding-top: 20px;
+    margin-bottom: 0;
 }
 
 .footer-block {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+}
+
+.yelp img {
+    width: 10%;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.yelp {
+    text-align: right;
+    font-family: $header-font-stack;
+    font-size: 20px;
+    color: $background-color;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    padding: 0px 10px 0px 10px;
 }
