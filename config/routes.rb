@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   # devise_for :users
   get 'sessions/new'
   get 'users/sign_in'
-  # This post route is for creating our ajax calls
-  post 'activities/index'
+  post 'activities/new'
 
   resources :schedules
   resources :activities
