@@ -36,6 +36,7 @@
     background-color: $header-font-color;
 }
 
+//all header stuff, including text, image and lohout button
 .header {
     background-color: $header-color;
 }
@@ -79,11 +80,12 @@
     position: absolute;
     top: 8px;
     right: 60px;
-    opacity: 0.3;
+    opacity: 0.2;
     width: 100px;
     height: auto;
 }
 
+//matching background color of body to color of NYC skyline image, making full-page
 .body {
     min-height: 100vh;
     margin: auto;
@@ -218,7 +220,10 @@ input.body {
 }
 
 .museum-restaurant-box {
-    @include box;
+    border-radius: 25px;
+    width: 400px;
+    height: 300px;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-font-color;
     margin: 0px auto 50px auto;
 }
@@ -229,16 +234,69 @@ input.body {
     font-size: 30px;
     text-align: center;
     vertical-align: middle;
-    padding: 0px 0px 10px 0px;
+    height: 100px;
+    padding: 10px 10px 0px 10px;
 }
 
 .restaurant-name {
     font-family: $header-font-stack;
-    color: $header-color;
+    color: $header-font-stack;
     font-size: 30px;
     text-align: center;
     vertical-align: middle;
-    padding: 0px 0px 10px 0px;
+    height: 100px;
+    padding: 10px 10px 0px 10px;
+}
+
+.time-slot {
+    font-family: $body-font-stack;
+    font-size: 20px;
+    color: $header-grey;
+    text-align: center;
+}
+
+.schedule-submit-button {
+    color: $header-color;
+    border-radius: 5px !important;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00) !important;
+    background-color: #00e600 !important;
+    font-size: 30px;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 75px;
+}
+
+.checkered-line {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.white-square {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+}
+
+.black-square {
+    height: 20px;
+    width: 20px;
+    background-color: black;
+}
+
+.all-day-schedule {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.morning-schedule {
+    padding: 0px;
+    margin: 0px auto 50px auto;
+}
+
+.afternoon-schedule {
+    padding: 0px;
+    margin: 0px auto 50px auto;
 }
 
 .dining-box {
