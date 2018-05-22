@@ -1,4 +1,4 @@
-<h1><%= @time_slot %></h1>
+<div class="time-slot"><%= @time_slot %></div>
 
 <%= simple_form_for @activity, remote:true do |f| %>
   <%= f.hidden_field :schedule_id, value: @schedule_id %>
@@ -12,5 +12,5 @@
   <%= f.hidden_field :address, value: @business['location']['display_address'] %>
   <%= f.hidden_field :phone, value: @business['display_phone'] %>
   <%= f.hidden_field :distance, value: @business['distance'] %>
-  <%= f.submit "Choose Activity" %>
+  <%= f.submit "Choose Activity", class: 'schedule-submit-button' %>
 <% end %>
