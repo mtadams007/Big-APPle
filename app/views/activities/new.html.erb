@@ -1,6 +1,7 @@
 <div class="container-fluid">
 <div class="row">
-  <div class="morning-schedule col-sm-6">
+  <div class="morning-schedule col-sm-4">
+  <div class="time-of-day">MORNING</div>
     <div class="museum-restaurant-box">
       <div class="museum-name"><span class="glyphicon-glyphicon-education"></span> <%=@first_museum['name']%></div>
       <div class="checkered-line row">
@@ -112,7 +113,9 @@
 
 
 
-  <div class="afternoon-schedule col-sm-6">
+  <div class="afternoon-schedule col-sm-4">
+    <div class="time-of-day">AFTERNOON</div>
+
   <div class="museum-restaurant-box">
     <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
       <% @business = @second_museum %>
