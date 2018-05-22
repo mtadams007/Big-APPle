@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # devise_for :users
   get 'sessions/new'
   get 'users/sign_in'
-  post 'activities/index'
+  post 'activities/new'
 
   resources :schedules
   resources :activities
