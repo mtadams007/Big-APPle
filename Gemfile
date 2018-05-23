@@ -72,3 +72,5 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', '~> 4.0'
 
 gem 'uber-ruby', require: 'uber'
+
+gem 'google_maps_service', require: 'google_maps_service'

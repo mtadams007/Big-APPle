@@ -55,8 +55,31 @@ class SchedulesController < ApplicationController
     @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
   
     # GOOGLE MAPS API
-    
+    require 'google_maps_service'
 
+    # Setup global parameters
+    GoogleMapsService.configure do |config|
+      config.key = ENV['GOOGLE_MAPS_API_KEY']
+      config.retry_timeout = 20
+      config.queries_per_second = 10
+    end
+
+    # Initialize client using global parameters
+    gmaps = GoogleMapsService::Client.new
+
+    latlng_restaurant1 = [@slat, @slon]
+    latlng_museum2 = [@dlat, @dlon]
+    
+    # Simple directions
+    routes = gmaps.directions(
+      latlng_restaurant1,
+      latlng_museum2,
+      mode: 'walking',
+      alternatives: false)
+
+    @directions = routes[0]
+    # ['legs']['distance']['text']
+    #  <p>Google Directions: <%= @directions %></p>
   end
 
   private
