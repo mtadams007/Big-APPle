@@ -35,7 +35,7 @@ class SchedulesController < ApplicationController
 
     client = Uber::Client.new do |config|
       config.server_token = ENV['UBER_API_KEY']
-      puts " ------------- API KEY WORKS -------------"
+      puts "HELLO HELLO HELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLO-------------"
     end
 
     @slat = @restaurant1.latitude
@@ -43,7 +43,6 @@ class SchedulesController < ApplicationController
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
 
-<<<<<<< Updated upstream
     puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
     puts "*-----------------------------------------------*"
     puts "*-----------------------------------------------*"
@@ -53,11 +52,6 @@ class SchedulesController < ApplicationController
     puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[2].estimate
     puts "*-----------------------------------------------*"
     puts "*-----------------------------------------------*"
-=======
-    puts "* PRICE ESTIMATES *"
-    puts @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)
-    puts "* PRICE ESTIMATES *"
->>>>>>> Stashed changes
   end
 
   private
