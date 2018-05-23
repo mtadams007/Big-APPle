@@ -51,13 +51,8 @@ class SchedulesController < ApplicationController
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
     
-    # Testing client price estimations for specific user
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
-    puts "*Uber Pool*"
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[1].estimate
-    puts "*UberX*"
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[2].estimate
-    puts "*UberXL*"
+    # Client price estimations for specific user
+    @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
   end
 
   private
