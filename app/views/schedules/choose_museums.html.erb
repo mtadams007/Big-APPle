@@ -4,17 +4,17 @@
 
 <div class="choose-schedule-box">
 <%= form_tag("/activities/new", method: "post") do %>
-<%= label_tag :term, "Morning Museum Type" %>
-<%= text_field_tag :term, nil, size: '21', placeholder: 'e.g.art', class: 'input' %>
-<%= label_tag :location, "Hotel Zipcode" %>
-<%= text_field_tag :location, nil, size: '30', placeholder: 'e.g. 10001', class: 'input' %>
-<%= label_tag :lunch, "Lunch Cuisine" %>
-<%= text_field_tag :lunch, nil, size: '29', placeholder: 'enter one type of cuisine', class: 'input input-large' %>
-<%= label_tag :term2, "Afternoon Museum Type" %>
-<%= text_field_tag :term2, nil, placeholder: 'e.g. history', class: 'input' %>
-<%= label_tag :dinner, "Dinner Cuisine" %>
+<%= label_tag :location, "Hotel Zipcode", class: 'form-text' %>
+<%= text_field_tag :location, nil, size: '44', placeholder: 'e.g. 10001', class: 'input' %>
+<%= label_tag :term, "Morning Museum Type", class: 'form-text' %>
+<%= text_field_tag :term, nil, size: '44', placeholder: 'e.g.art', class: 'input' %>
+<%= label_tag :lunch, "Lunch Cuisine", class: 'form-text' %>
+<%= text_field_tag :lunch, nil, size: '44', placeholder: 'enter one type of cuisine', class: 'input input-large' %>
+<%= label_tag :term2, "Afternoon Museum Type", class: 'form-text' %>
+<%= text_field_tag :term2, nil, size: '44', placeholder: 'e.g. history', class: 'input' %>
+<%= label_tag :dinner, "Dinner Cuisine", class: 'form-text' %>
 
-<%= text_field_tag :dinner, nil, size: '29', placeholder: 'enter one type of cuisine', class: 'input' %><br>
+<%= text_field_tag :dinner, nil, size: '44', placeholder: 'enter one type of cuisine', class: 'input' %><br>
 <div id="submit"><%= submit_tag "Go!", class: 'schedule-button' %></div>
 
 <%end%>
