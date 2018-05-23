@@ -11,6 +11,12 @@ class SchedulesController < ApplicationController
   end
 
   def new
+    @sample_schedule = Schedule.find(11)
+    @activities = @sample_schedule.activities
+    @museum1 = @activities.find_by(time_slot: 'Morning')
+    @restaurant1 = @activities.find_by(time_slot: 'Lunch')
+    @museum2 = @activities.find_by(time_slot: 'Afternoon')
+    @restaurant2 = @activities.find_by(time_slot: 'Dinner')
     @schedule = Schedule.new
     @current_user = current_user
   end

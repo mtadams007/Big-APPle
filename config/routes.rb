@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'users/sign_in'
   post 'activities/new'
   get 'schedules/choose_museums'
+  get 'activities/new_choice'
 
   resources :schedules
   resources :activities

@@ -1,7 +1,12 @@
+  let counter = 0;
 $( document ).on('turbolinks:load', function() {
 
     $(".schedule-submit-button").click(function(){
-      console.log("i've been clicked")
        $(this).addClass("hideMe");
+       counter++;
+       if (counter === 4){
+         counter = 0;
+       $("#profileLink").removeClass("hideMe");
+     }
     });
 });
