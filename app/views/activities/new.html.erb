@@ -53,7 +53,6 @@
         <% @schedule_id = @current_user.schedules.last.id%>
 
         <% @business = @first_museum %>
-          <% @time_slot = 'Morning' %>
           <%=render 'form' %>
     </div>
 
@@ -164,7 +163,6 @@
       <div class="white-square"></div>
 
       </div>
-      <% @time_slot = 'Afternoon'%>
         <%=render 'form' %>
   </div>
 
