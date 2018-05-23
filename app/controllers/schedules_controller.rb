@@ -2,12 +2,13 @@ class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # Displays the schedules of the logged_in user
     @current_user = current_user
     @schedules = @current_user.schedules
   end
 
   def choose_museums
-
+    # Display the form to create a schedule
   end
 
   def new
@@ -33,25 +34,24 @@ class SchedulesController < ApplicationController
     @museum2 = @activities.find_by(time_slot: 'Afternoon')
     @restaurant2 = @activities.find_by(time_slot: 'Dinner')
 
+    # Defining the Uber API 
     client = Uber::Client.new do |config|
       config.server_token = ENV['UBER_API_KEY']
-      puts "HELLO HELLO HELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLO-------------"
     end
 
+    # Creating variable instances to call in the client price estimations
     @slat = @restaurant1.latitude
     @slon = @restaurant1.longitude
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
-
+    
+    # Testing client price estimations for specific user
     puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
-    puts "*-----------------------------------------------*"
-    puts "*-----------------------------------------------*"
+    puts "*Uber Pool*"
     puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[1].estimate
-    puts "*-----------------------------------------------*"
-    puts "*-----------------------------------------------*"
+    puts "*UberX*"
     puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[2].estimate
-    puts "*-----------------------------------------------*"
-    puts "*-----------------------------------------------*"
+    puts "*UberXL*"
   end
 
   private
