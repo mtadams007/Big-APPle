@@ -43,9 +43,13 @@ class SchedulesController < ApplicationController
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
 
+    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
     puts "*-----------------------------------------------*"
     puts "*-----------------------------------------------*"
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)
+    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[1].estimate
+    puts "*-----------------------------------------------*"
+    puts "*-----------------------------------------------*"
+    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[2].estimate
     puts "*-----------------------------------------------*"
     puts "*-----------------------------------------------*"
   end
