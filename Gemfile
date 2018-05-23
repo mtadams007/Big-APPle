@@ -67,6 +67,8 @@ gem 'httparty', '~> 0.16.2'
 
 gem 'simple_form', '~> 4.0'
 
+gem 'jquery-rails'
+
 gem 'twitter-bootstrap-rails', '~> 4.0'
 
 gem 'uber-ruby', require: 'uber'
