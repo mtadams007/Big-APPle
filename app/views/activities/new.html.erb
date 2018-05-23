@@ -3,7 +3,8 @@
   <div class="morning-schedule col-sm-4">
   <div class="time-of-day">MORNING</div>
     <div class="museum-restaurant-box">
-      <div class="museum-name"><span class="glyphicon-glyphicon-education"></span> <%=@first_museum['name']%></div>
+      <div class="museum-name" id="first-museum-change">
+      <% @business = @first_museum %> <%=@business['name']%></div>
       <div class="checkered-line row">
       <div class="white-square"></div>
       <div class="black-square"></div>
@@ -52,10 +53,14 @@
 
         <% @schedule_id = @current_user.schedules.last.id%>
 
-        <% @business = @first_museum %>
+
+
+          <% @time_slot = 'Morning' %>
+
+
           <%=render 'form' %>
 
-          <%= link_to 'Forget about it!', new_course_path, remote: true, id: "course-ajaxcall" %>
+          <%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall" %>
     </div>
 
     <div class="museum-restaurant-box">
@@ -165,6 +170,7 @@
       <div class="white-square"></div>
 
       </div>
+        <% time_slot = "Afternoon" %>
         <%=render 'form' %>
   </div>
 

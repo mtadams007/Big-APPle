@@ -1,0 +1,7 @@
+console.log("I'm in the new choice path");
+<%if @first_museum_num != 0 %>
+<%@first_museum_num -= 1 %>
+<% else %>
+<%@first_museum_num = 4%>
+<%end%>
+$('#first-museum-change').html("<%@business = @museums[@first_museum_num]%><%=@first_museum['name'] ");
