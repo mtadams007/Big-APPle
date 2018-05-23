@@ -1,231 +1,42 @@
 <div class="container-fluid">
-<div class="row">
-  <div class="morning-schedule col-sm-4">
-  <div class="time-of-day">MORNING</div>
-    <div class="museum-restaurant-box">
-      <div class="museum-name" id="first-museum-change">
-      <% @business = @first_museum %> <%=@business['name']%></div>
-      <div class="checkered-line row">
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
+   <div class="row">
+      <div class="morning-schedule col-sm-4">
+         <div class="time-of-day">MORNING</div>
+         <div class="museum-restaurant-box">
+            <div class="museum-name" id="first-museum-change">
+               <% @business = @first_museum %> <%=@business['name']%>
+            </div>
+            <%=render 'blackandwhitesquares' %>
+            <% @schedule_id = @current_user.schedules.last.id%>
+            <% @time_slot = 'Morning' %>
+            <%=render 'form' %>
+            <%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall" %>
+         </div>
+         <div class="museum-restaurant-box">
+            <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
+            <% @business = @restaurant['businesses'][0] %>
+            <%=render 'blackandwhitesquares' %>
+            <% @time_slot = 'Lunch' %>
+            <%=render 'form'%>
+         </div>
       </div>
-      <div class="checkered-line row">
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-
+      <div class="afternoon-schedule col-sm-4">
+         <div class="time-of-day">AFTERNOON</div>
+         <div class="museum-restaurant-box">
+            <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
+            <% @business = @second_museum %>
+            <%=render 'blackandwhitesquares' %>
+            <% time_slot = "Afternoon" %>
+            <%=render 'form' %>
+         </div>
+         <div class="museum-restaurant-box">
+            <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
+            <% @business = @restaurant2['businesses'][0] %>
+            <%=render 'blackandwhitesquares' %>
+            <% @time_slot = 'Dinner'%>
+            <%=render 'form' %>
+         </div>
       </div>
-
-        <% @schedule_id = @current_user.schedules.last.id%>
-
-
-
-          <% @time_slot = 'Morning' %>
-
-
-          <%=render 'form' %>
-
-          <%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall" %>
-    </div>
-
-    <div class="museum-restaurant-box">
-      <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
-        <% @business = @restaurant['businesses'][0] %>
-        <div class="checkered-line row">
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      </div>
-      <div class="checkered-line row">
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-
-      </div>
-        <% @time_slot = 'Lunch' %>
-          <%=render 'form'%>
-    </div>
-  </div>
-
-
-
-
-  <div class="afternoon-schedule col-sm-4">
-    <div class="time-of-day">AFTERNOON</div>
-
-  <div class="museum-restaurant-box">
-    <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
-      <% @business = @second_museum %>
-      <div class="checkered-line row">
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      </div>
-      <div class="checkered-line row">
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-
-      </div>
-        <% time_slot = "Afternoon" %>
-        <%=render 'form' %>
-  </div>
-
-      <div class="museum-restaurant-box">
-        <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
-          <% @business = @restaurant2['businesses'][0] %>
-          <div class="checkered-line row">
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      </div>
-      <div class="checkered-line row">
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-      <div class="black-square"></div>
-      <div class="white-square"></div>
-
-      </div>
-          <% @time_slot = 'Dinner'%>
-          <%=render 'form' %>
-      </div>
-  </div>
-</div>
-<a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
+   </div>
+   <a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
 </div>
