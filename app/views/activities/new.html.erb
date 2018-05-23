@@ -55,6 +55,8 @@
         <% @business = @first_museum %>
           <% @time_slot = 'Morning' %>
           <%=render 'form' %>
+
+          <%= link_to 'Forget about it!', new_course_path, remote: true, id: "course-ajaxcall" %>
     </div>
 
     <div class="museum-restaurant-box">
@@ -221,4 +223,5 @@
       </div>
   </div>
 </div>
+<a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
 </div>
