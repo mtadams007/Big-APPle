@@ -11,7 +11,7 @@
             <div class="museum-name" id="first-museum-change">
                <% @business = @first_museum %> <%=@business['name']%>
             </div>
-            <%=render 'blackandwhitesquares' %>
+            <%=render 'checkeredboxes' %>
             <% @schedule_id = @current_user.schedules.last.id%>
             <% @time_slot = 'Morning' %>
             <%=render 'form' %>
@@ -20,7 +20,7 @@
          <div class="museum-restaurant-box">
             <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
             <% @business = @restaurant['businesses'][0] %>
-            <%=render 'blackandwhitesquares' %>
+            <%=render 'checkeredboxes' %>
             <% @time_slot = 'Lunch' %>
             <%=render 'form'%>
          </div>
@@ -30,14 +30,14 @@
          <div class="museum-restaurant-box">
             <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
             <% @business = @second_museum %>
-            <%=render 'blackandwhitesquares' %>
+            <%=render 'checkeredboxes' %>
             <% time_slot = "Afternoon" %>
             <%=render 'form' %>
          </div>
          <div class="museum-restaurant-box">
             <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
             <% @business = @restaurant2['businesses'][0] %>
-            <%=render 'blackandwhitesquares' %>
+            <%=render 'checkeredboxes' %>
             <% @time_slot = 'Dinner'%>
             <%=render 'form' %>
          </div>
