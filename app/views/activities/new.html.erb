@@ -54,7 +54,10 @@
         <% @schedule_id = @current_user.schedules.last.id%>
 
 
+
           <% @time_slot = 'Morning' %>
+
+
           <%=render 'form' %>
 
           <%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall" %>
@@ -167,7 +170,7 @@
       <div class="white-square"></div>
 
       </div>
-      <% @time_slot = 'Afternoon'%>
+        <% time_slot = "Afternoon" %>
         <%=render 'form' %>
   </div>
 
