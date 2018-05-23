@@ -1,3 +1,7 @@
+<div class="choose-box">
+<div class="sample-schedule-text">Choose two museums and two restaurants</div>
+</div>
+
 <div class="container-fluid">
 <div class="row">
   <div class="morning-schedule col-sm-4">
@@ -60,8 +64,16 @@
 
           <%=render 'form' %>
 
-          <%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall" %>
+          <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
     </div>
+    
+    <div class="transit-icons">
+      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+      <span class="uber-font">UBER</span>
+    </div>
+    
 
     <div class="museum-restaurant-box">
       <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
@@ -113,8 +125,16 @@
       </div>
         <% @time_slot = 'Lunch' %>
           <%=render 'form'%>
+          <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+    </div>
+    <div class="transit-icons">
+      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+      <span class="uber-font">UBER</span>
     </div>
   </div>
+  
 
 
 
@@ -172,7 +192,14 @@
       </div>
         <% time_slot = "Afternoon" %>
         <%=render 'form' %>
-  </div>
+        <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div> 
+        </div>
+        <div class="transit-icons">
+      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+      <span class="uber-font">UBER</span>
+    </div>
 
       <div class="museum-restaurant-box">
         <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
@@ -224,7 +251,14 @@
       </div>
           <% @time_slot = 'Dinner'%>
           <%=render 'form' %>
+          <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
       </div>
+      <div class="transit-icons">
+      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+      <span class="uber-font">UBER</span>
+    </div>
   </div>
 </div>
 <a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
