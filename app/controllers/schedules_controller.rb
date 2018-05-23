@@ -60,8 +60,8 @@ class SchedulesController < ApplicationController
     # Setup global parameters
     GoogleMapsService.configure do |config|
       config.key = ENV['GOOGLE_MAPS_API_KEY']
-      config.retry_timeout = 20
-      config.queries_per_second = 10
+      config.retry_timeout = 50
+      config.queries_per_second = 20
     end
 
     # Initialize client using global parameters
