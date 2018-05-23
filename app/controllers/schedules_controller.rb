@@ -51,7 +51,9 @@ class SchedulesController < ApplicationController
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
     
+
     # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum 
+
     @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
   end
 
