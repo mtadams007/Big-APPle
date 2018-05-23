@@ -2,15 +2,22 @@ class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # Displays the schedules of the logged_in user
     @current_user = current_user
     @schedules = @current_user.schedules
   end
 
   def choose_museums
-
+    # Display the form to create a schedule
   end
 
   def new
+    @sample_schedule = Schedule.find(11)
+    @activities = @sample_schedule.activities
+    @museum1 = @activities.find_by(time_slot: 'Morning')
+    @restaurant1 = @activities.find_by(time_slot: 'Lunch')
+    @museum2 = @activities.find_by(time_slot: 'Afternoon')
+    @restaurant2 = @activities.find_by(time_slot: 'Dinner')
     @schedule = Schedule.new
     @current_user = current_user
   end
@@ -33,25 +40,21 @@ class SchedulesController < ApplicationController
     @museum2 = @activities.find_by(time_slot: 'Afternoon')
     @restaurant2 = @activities.find_by(time_slot: 'Dinner')
 
+    # Defining the Uber API 
     client = Uber::Client.new do |config|
       config.server_token = ENV['UBER_API_KEY']
-      puts "HELLO HELLO HELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLOHELLO HELLO-------------"
     end
 
+    # Creating variable instances to call in the client price estimations
     @slat = @restaurant1.latitude
     @slon = @restaurant1.longitude
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
+    
 
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
-    puts "*-----------------------------------------------*"
-    puts "*-----------------------------------------------*"
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[1].estimate
-    puts "*-----------------------------------------------*"
-    puts "*-----------------------------------------------*"
-    puts client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[2].estimate
-    puts "*-----------------------------------------------*"
-    puts "*-----------------------------------------------*"
+    # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum 
+
+    @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
   end
 
   private
