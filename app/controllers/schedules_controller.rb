@@ -63,21 +63,19 @@ class SchedulesController < ApplicationController
     @museum2_lon = @museum2.longitude
 
     # The estimate for Uber travel in Uber Pool from the 1st museum to the 1st restaurant
-    @estimate = client.price_estimations(start_latitude: @museum1_lat, start_longitude: @museum1_lon, end_latitude: @rest1_lat, end_longitude: @rest1_lon)[0].estimate
-    @seconds = client.price_estimations(start_latitude: @museum1_lat, start_longitude: @museum1_lon, end_latitude: @rest1_lat, end_longitude: @rest1_lon)[0].estimate
-    # @minutes = @seconds/60
-    puts @estimate
-    puts @seconds
+    @estimate_m1r1 = client.price_estimations(start_latitude: @museum1_lat, start_longitude: @museum1_lon, end_latitude: @rest1_lat, end_longitude: @rest1_lon)[0].estimate
+    @seconds_m1r1 = client.time_estimations(start_latitude: @museum1_lat, start_longitude: @museum1_lon, end_latitude: @rest1_lat, end_longitude: @rest1_lon)[0].estimate
+    @minutes_m1r1 = @seconds_m1r1/60
 
-    # # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum
-    # @estimate = client.price_estimations(start_latitude: @rest1_lat, start_longitude: @rest1_lon, end_latitude: @museum1_lat, end_longitude: @museum1_lon)[0].estimate
-    # @seconds = client.time_estimations(start_latitude: @rest1_lat, start_longitude: @rest1_lon, end_latitude: @museum1_lat, end_longitude: @museum1_lon)[0].estimate
-    # @minutes = @seconds/60
+    # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum
+    @estimate_r1m2 = client.price_estimations(start_latitude: @rest1_lat, start_longitude: @rest1_lon, end_latitude: @museum2_lat, end_longitude: @museum2_lon)[0].estimate
+    @seconds_r1m2 = client.time_estimations(start_latitude: @rest1_lat, start_longitude: @rest1_lon, end_latitude: @museum2_lat, end_longitude: @museum2_lon)[0].estimate
+    @minutes_r1m2 = @seconds_r1m2/60
 
-    # # The estimate for Uber travel in Uber Pool from the 2nd museum to the 2nd restaurant
-    # @estimate = client.price_estimations(start_latitude: @museum2_lat, start_longitude: @museum2_lon, end_latitude: @rest2_lat, end_longitude: @rest2_lon)[0].estimate
-    # @seconds = client.price_estimations(start_latitude: @museum2_lat, start_longitude: @museum2_lon, end_latitude: @rest2_lat, end_longitude: @rest2_lon)[0].estimate
-    # @minutes = @seconds/60
+    # The estimate for Uber travel in Uber Pool from the 2nd museum to the 2nd restaurant
+    @estimate_m2r2 = client.price_estimations(start_latitude: @museum2_lat, start_longitude: @museum2_lon, end_latitude: @rest2_lat, end_longitude: @rest2_lon)[0].estimate
+    @seconds_m2r2 = client.time_estimations(start_latitude: @museum2_lat, start_longitude: @museum2_lon, end_latitude: @rest2_lat, end_longitude: @rest2_lon)[0].estimate
+    @minutes_m2r2 = @seconds_m2r2/60
 
     # GOOGLE MAPS API
     require 'google_maps_service'
@@ -97,29 +95,29 @@ class SchedulesController < ApplicationController
     latlng_museum1 = [@museum1_lat, @museum1_lon] 
     latlng_museum2 = [@museum2_lat, @museum1_lon]
 
-    # DIRECTIONS FROM MUSEUM 1 TO RESTAURANT 2
+    # DIRECTIONS FROM MUSEUM 1 TO RESTAURANT 1
     walking = gmaps.directions(
       latlng_museum1,
       latlng_restaurant2,
       mode: 'walking',
       alternatives: false)
-    @distance = walking[0][:legs][0][:distance][:text]
-    @time = walking[0][:legs][0][:duration][:text]
+    @distance_m1r1 = walking[0][:legs][0][:distance][:text]
+    @time_m1r1 = walking[0][:legs][0][:duration][:text]
 
     bicycling = gmaps.directions(
       latlng_museum1,
       latlng_restaurant2,
       mode: 'bicycling',
       alternatives: false)
-    @bike_distance = bicycling[0][:legs][0][:distance][:text]
-    @bike_time = bicycling[0][:legs][0][:duration][:text]
+    @bike_distance_m1r1 = bicycling[0][:legs][0][:distance][:text]
+    @bike_time_m1r1 = bicycling[0][:legs][0][:duration][:text]
 
     subway = gmaps.directions(
       latlng_museum1,
       latlng_restaurant2,
       transit_mode: 'subway ',
       alternatives: false)
-    @transit_distance = subway[0][:legs][0][:distance][:text]
+    @transit_distance_m1r1 = subway[0][:legs][0][:distance][:text]
     
     # DIRECTIONS FROM RESTAURANT 1 TO MUSEUM 2
     walking = gmaps.directions(
@@ -127,23 +125,23 @@ class SchedulesController < ApplicationController
       latlng_museum2,
       mode: 'walking',
       alternatives: false)
-    @distance = walking[0][:legs][0][:distance][:text]
-    @time = walking[0][:legs][0][:duration][:text]
+    @distance_r1m2 = walking[0][:legs][0][:distance][:text]
+    @time_r1m2 = walking[0][:legs][0][:duration][:text]
 
     bicycling = gmaps.directions(
       latlng_restaurant1,
       latlng_museum2,
       mode: 'bicycling',
       alternatives: false)
-    @bike_distance = bicycling[0][:legs][0][:distance][:text]
-    @bike_time = bicycling[0][:legs][0][:duration][:text]
+    @bike_distance_r1m2 = bicycling[0][:legs][0][:distance][:text]
+    @bike_time_r1m2 = bicycling[0][:legs][0][:duration][:text]
 
     subway = gmaps.directions(
       latlng_restaurant1,
       latlng_museum2,
       transit_mode: 'subway ',
       alternatives: false)
-    @transit_distance = subway[0][:legs][0][:distance][:text]
+    @transit_distance_r1m2 = subway[0][:legs][0][:distance][:text]
 
     # DIRECTIONS FROM MUSEUM 2 TO RESTAURANT 2 
     walking = gmaps.directions(
@@ -151,23 +149,23 @@ class SchedulesController < ApplicationController
       latlng_restaurant2,
       mode: 'walking',
       alternatives: false)
-    @distance = walking[0][:legs][0][:distance][:text]
-    @time = walking[0][:legs][0][:duration][:text]
+    @distance_m2r2 = walking[0][:legs][0][:distance][:text]
+    @time_m2r2 = walking[0][:legs][0][:duration][:text]
 
     bicycling = gmaps.directions(
       latlng_museum2,
       latlng_restaurant2,
       mode: 'bicycling',
       alternatives: false)
-    @bike_distance = bicycling[0][:legs][0][:distance][:text]
-    @bike_time = bicycling[0][:legs][0][:duration][:text]
+    @bike_distance_m2r2 = bicycling[0][:legs][0][:distance][:text]
+    @bike_time_m2r2 = bicycling[0][:legs][0][:duration][:text]
 
     subway = gmaps.directions(
       latlng_museum2,
       latlng_restaurant2,
       transit_mode: 'subway ',
       alternatives: false)
-    @transit_distance = subway[0][:legs][0][:distance][:text]
+    @transit_distance_m2r2 = subway[0][:legs][0][:distance][:text]
 
   end
 

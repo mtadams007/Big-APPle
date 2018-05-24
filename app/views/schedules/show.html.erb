@@ -9,11 +9,20 @@
                         <%=@museum1.name%>
                     </h3>
                 </div>
+                <div class="transit-icons">
+                </div>
                 <div class="dining-box">
                     <h3>
                         <%=@restaurant1.name%>
                     </h3>
                 </div>
+                <% @distance = @distance_m1r1 %>
+                <% @time = @time_m1r1 %>
+                <% @bike_distance = @bike_distance_m1r1 %>
+                <% @bike_time = @bike_time_m1r1 %>
+                <% @transit_distance = @transit_distance_m1r1 %>
+                <% @estimate = @estimate_m1r1 %>
+                <% @minutes = @minutes_m1r1 %>
                 <%= render 'transportation' %>
             </div>
 
@@ -26,11 +35,26 @@
                     </h3>
                     <p>Uber Estimate: <%= @estimate %></p>
                 </div>
+                <% @distance = @distance_r1m2 %>
+                <% @time = @time_r1m2 %>
+                <% @bike_distance = @bike_distance_r1m2 %>
+                <% @bike_time = @bike_time_r1m2 %>
+                <% @transit_distance = @transit_distance_r1m2 %>
+                <% @estimate = @estimate_r1m2 %>
+                <% @minutes = @minutes_r1m2 %>
+                <%= render 'transportation' %>
                 <div class="dining-box">
                     <h3>
                         <%=@restaurant2.name%>
                     </h3>
                 </div>
+                <% @distance = @distance_m2r2 %>
+                <% @time = @time_m2r2 %>
+                <% @bike_distance = @bike_distance_m2r2%>
+                <% @bike_time = @bike_time_m2r2 %>
+                <% @transit_distance = @transit_distance_m2r2 %>
+                <% @estimate = @estimate_m2r2 %>
+                <% @minutes = @minutes_m2r2 %>
                 <%= render 'transportation' %>
                 </div>
             </div>
