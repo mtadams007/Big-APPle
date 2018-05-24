@@ -51,6 +51,6 @@ class ActivitiesController < ApplicationController
 
   private
     def activity_params
-      params[:activity].permit(:time_slot, :business_identity, :schedule_id, :image_url, :name, :title, :rating, :url, :address, :phone, :distance, :latitude, :longitude)
+      params[:activity].permit(:time_slot, :business_identity, :schedule_id, :image_url, :name, :title, :rating, :url, :address, :phone, :distance, :latitude, :longitude, :price)
     end
   end
