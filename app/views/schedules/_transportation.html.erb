@@ -1,13 +1,7 @@
 <div class="transit-icons">
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="<%= @estimate %>"><i class="material-icons" >directions_walk<span>&nbsp;&nbsp</span></i></button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="BIKE"><i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i></button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="SUBWAY"><i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i></button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="UBER"><span class="uber-font">UBER</span></button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="You will be walking for <%= @distance %>les for <%= @time %>"><i class="material-icons" >directions_walk<span>&nbsp;&nbsp</span></i></button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="You will be bicycling for <%= @bike_distance %> for <%= @bike_time %>"><i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i></button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="You will be on the subway for <%= @transit_distance %>les"><i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i></button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Uber will cost about <%= @estimate %> and will take <%= @minutes %> mins"><span class="uber-font">UBER</span></button>
 </div>
 
-<div class="transit-icons">
-<i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
-<i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
-<i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
-<span class="uber-font">UBER</span>
-</div>

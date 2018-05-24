@@ -60,6 +60,8 @@ class SchedulesController < ApplicationController
 
     # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum
     @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
+    @seconds = client.time_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
+    @minutes = @seconds/60
 
     # GOOGLE MAPS API
     require 'google_maps_service'
@@ -78,13 +80,33 @@ class SchedulesController < ApplicationController
     latlng_museum2 = [@dlat, @dlon]
 
     # Simple directions
-    routes = gmaps.directions(
+    walking = gmaps.directions(
       latlng_restaurant1,
       latlng_museum2,
       mode: 'walking',
       alternatives: false)
 
-    @directions = routes[0]
+    @distance = walking[0][:legs][0][:distance][:text]
+    @time = walking[0][:legs][0][:duration][:text]
+
+    bicycling = gmaps.directions(
+      latlng_restaurant1,
+      latlng_museum2,
+      mode: 'bicycling',
+      alternatives: false)
+  
+    @bike_distance = bicycling[0][:legs][0][:distance][:text]
+    @bike_time = bicycling[0][:legs][0][:duration][:text]
+
+    subway = gmaps.directions(
+      latlng_restaurant1,
+      latlng_museum2,
+      transit_mode: 'subway ',
+      alternatives: false)
+
+    @transit_distance = subway[0][:legs][0][:distance][:text]
+    # @transit_time = subways[0][:legs][0][:duration][:text]
+
   end
 
   private
