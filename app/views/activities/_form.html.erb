@@ -1,5 +1,3 @@
-<div class="time-slot"><%= @time_slot %></div>
-
 <%= simple_form_for @activity, remote:true do |f| %>
   <%= f.hidden_field :schedule_id, value: @schedule_id %>
   <%= f.hidden_field :time_slot, value: @time_slot %>

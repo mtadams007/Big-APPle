@@ -1,0 +1,55 @@
+<div id="carousel_<%=@carousel_id%>" class="carousel slide" data-interval=false>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+
+      <div class="<%=@business_type%>-name">
+         <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+
+      <%=render 'form' %>
+      <div class="reject-button"><a href="#carousel_<%=@carousel_id%>" role="button" data-slide="next">Fugheddaboudit!</a></div>
+
+
+    </div>
+    <div class="carousel-item">
+      <div class="<%=@business_type%>-name">
+        <% @business = @business_array['businesses'][@random_num+1 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+
+      <%=render 'form' %>
+      <div class="reject-button"><a href="#carousel_<%=@carousel_id%>" role="button" data-slide="next">Fugheddaboudit!</a></div>
+    </div>
+    <div class="carousel-item">
+
+      <div class="<%=@business_type%>-name">
+        <% @business = @business_array['businesses'][@random_num+2 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+
+      <%=render 'form' %>
+      <div class="reject-button"><a href="#carousel_<%=@carousel_id%>" role="button" data-slide="next">Fugheddaboudit!</a></div>
+    </div>
+    <div class="carousel-item">
+
+      <div class="<%=@business_type%>-name">
+        <% @business = @business_array['businesses'][@random_num+3 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+
+      <%=render 'form' %>
+      <div class="reject-button"><a href="#carousel_<%=@carousel_id%>" role="button" data-slide="next">Fugheddaboudit!</a></div>
+    </div>
+    <div class="carousel-item">
+
+      <div class="<%=@business_type%>-name">
+        <% @business = @business_array['businesses'][@random_num+4 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+
+      <%=render 'form' %>
+      <div class="reject-button"><a href="#carousel_<%=@carousel_id%>" role="button" data-slide="next">Fugheddaboudit!</a></div>
+    </div>
+  </div>
+</div>
