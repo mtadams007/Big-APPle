@@ -12,5 +12,5 @@
   <%= f.hidden_field :distance, value: @business['distance'] %>
   <%= f.hidden_field :latitude, value: @business['coordinates']['latitude'] %>
   <%= f.hidden_field :longitude, value: @business['coordinates']['longitude'] %>
-  <%= f.submit "Sounds good", class: 'schedule-submit-button' %>
+  <%= f.submit "Sounds good", class: "schedule-submit-button #{@button_class}" %>
 <% end %>
