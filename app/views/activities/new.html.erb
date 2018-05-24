@@ -12,6 +12,7 @@
         <% @business_type = 'museum'%>
         <% @carousel_id = '1' %>
         <% @business = @first_museum %>
+        <% @business_type_and_num = 'business1'%>
         <% @time_slot = "Morning" %>
         <% @business_array = @museums %>
         <% @random_num = @first_museum_num %>
@@ -29,8 +30,9 @@
       </div>
 
       <div class="museum-restaurant-box">
-        
 
+
+        <% @business_type_and_num = 'business2'%>
         <% @business_type = 'restaurant'%>
         <% @carousel_id = '2' %>
         <% @business = @first_restaurant %>
@@ -53,6 +55,7 @@
       <div class="time-of-day">AFTERNOON</div>
       <div class="museum-restaurant-box">
 
+        <% @business_type_and_num = 'business3'%>
         <% @business_type = 'museum'%>
         <% @carousel_id = '3' %>
         <% @time_slot = 'Afternoon' %>
@@ -75,7 +78,7 @@
       <div class="museum-restaurant-box">
 
 
-
+        <% @business_type_and_num = 'business4'%>
         <% @business_type = 'restaurant'%>
         <% @carousel_id = '4' %>
         <% @business = @second_restaurant %>
