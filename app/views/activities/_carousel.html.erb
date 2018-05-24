@@ -2,8 +2,11 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
 
+    
+ 
+
       <div class="<%=@business_type%>-name">
-         <%=@business['name']%>
+        <% if @time_slot === 'Lunch'%><i class="material-icons">restaurant<span>&nbsp</span></i><% elsif @time_slot === 'Dinner' %> <i class="material-icons">local_bar<span>&nbsp</span></i> <% else %> <i class="material-icons">location_city<span>&nbsp</span></i>  <%end%> <%=@business['name']%>
       </div>
       <%=render 'checkeredboxes' %>
 
