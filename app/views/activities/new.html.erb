@@ -1,78 +1,142 @@
 <div class="choose-box">
-<div class="sample-schedule-text">Choose two museums and two restaurants</div>
+  <div class="sample-schedule-text">Choose two museums and two restaurants</div>
 </div>
 
 <div class="container-fluid">
 
-   <div class="row">
-      <div class="morning-schedule col-sm-4">
-         <div class="time-of-day">MORNING</div>
-         <div class="museum-restaurant-box">
-            <div class="museum-name" id="first-museum-change">
-               <% @business = @first_museum %> <%=@business['name']%>
-            </div>
-            <%=render 'checkeredboxes' %>
-            <% @schedule_id = @current_user.schedules.last.id%>
-            <% @time_slot = 'Morning' %>
-            <%=render 'form' %>
-            <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
-    </div>
-    <div class="transit-icons">
-      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
-      <span class="uber-font">UBERx</span>
+  <div class="row">
+    <div class="morning-schedule col-sm-4">
+      <div class="time-of-day">MORNING</div>
+      <div class="museum-restaurant-box">
 
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+
+      <div class="museum-name">
+        <% @business = @first_museum %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+      <% @schedule_id = @current_user.schedules.last.id%>
+      <% @time_slot = 'Morning' %>
+      <%=render 'form' %>
+      <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+
+
+    </div>
+    <div class="carousel-item">
+      <div class="museum-name">
+        <% @business = @museums['businesses'][@first_museum_num+1 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+      <% @schedule_id = @current_user.schedules.last.id%>
+      <% @time_slot = 'Morning' %>
+      <%=render 'form' %>
+      <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+    </div>
+    <div class="carousel-item">
+
+      <div class="museum-name">
+        <% @business = @museums['businesses'][@first_museum_num+2 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+      <% @schedule_id = @current_user.schedules.last.id%>
+      <% @time_slot = 'Morning' %>
+      <%=render 'form' %>
+      <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+    </div>
+    <div class="carousel-item">
+
+      <div class="museum-name">
+        <% @business = @museums['businesses'][@first_museum_num+3 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+      <% @schedule_id = @current_user.schedules.last.id%>
+      <% @time_slot = 'Morning' %>
+      <%=render 'form' %>
+      <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+    </div>
+    <div class="carousel-item">
+
+      <div class="museum-name">
+        <% @business = @museums['businesses'][@first_museum_num+4 %5] %> <%=@business['name']%>
+      </div>
+      <%=render 'checkeredboxes' %>
+      <% @schedule_id = @current_user.schedules.last.id%>
+      <% @time_slot = 'Morning' %>
+      <%=render 'form' %>
+      <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+    </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-         <div class="museum-restaurant-box">
-            <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
-            <% @business = @restaurant['businesses'][0] %>
-            <%=render 'checkeredboxes' %>
-            <% @time_slot = 'Lunch' %>
-            <%=render 'form'%>
-     <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
-    </div>
-    <div class="transit-icons">
-      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
-      <span class="uber-font">UBERx</span>
-    </div>
-  </div>
-      <div class="afternoon-schedule col-sm-4">
-         <div class="time-of-day">AFTERNOON</div>
-         <div class="museum-restaurant-box">
-            <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
-            <% @business = @second_museum %>
-            <%=render 'checkeredboxes' %>
-            <% time_slot = "Afternoon" %>
-            <%=render 'form' %>
-           <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
-    </div>
-    <div class="transit-icons">
-      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
-      <span class="uber-font">UBERx</span>
-    </div>
 
-         
-         <div class="museum-restaurant-box">
-            <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
-            <% @business = @restaurant2['businesses'][0] %>
-            <%=render 'checkeredboxes' %>
-            <% @time_slot = 'Dinner'%>
-            <%=render 'form' %>
+
+      </div>
+      <div class="transit-icons">
+        <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+        <span class="uber-font">UBERx</span>
+
+      </div>
+
+      <div class="museum-restaurant-box">
+        <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
+        <% @business = @restaurant['businesses'][0] %>
+        <%=render 'checkeredboxes' %>
+        <% @time_slot = 'Lunch' %>
+        <%=render 'form'%>
         <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+      </div>
+      <div class="transit-icons">
+        <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+        <span class="uber-font">UBERx</span>
+      </div>
     </div>
-    <div class="transit-icons">
-      <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
-      <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
-      <span class="uber-font">UBERx</span>
+    <div class="afternoon-schedule col-sm-4">
+      <div class="time-of-day">AFTERNOON</div>
+      <div class="museum-restaurant-box">
+        <div class="museum-name"><span class="glyphicon-glyphicon-education"></span><%=@second_museum['name']%></div>
+        <% @business = @second_museum %>
+        <%=render 'checkeredboxes' %>
+        <% time_slot = "Afternoon" %>
+        <%=render 'form' %>
+        <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+      </div>
+      <div class="transit-icons">
+        <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+        <span class="uber-font">UBERx</span>
+      </div>
+
+
+      <div class="museum-restaurant-box">
+        <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
+        <% @business = @restaurant2['businesses'][0] %>
+        <%=render 'checkeredboxes' %>
+        <% @time_slot = 'Dinner'%>
+        <%=render 'form' %>
+        <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+      </div>
+      <div class="transit-icons">
+        <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+        <span class="uber-font">UBERx</span>
+      </div>
     </div>
   </div>
-   </div>
-   <a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
+  <a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
 </div>
