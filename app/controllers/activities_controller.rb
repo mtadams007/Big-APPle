@@ -16,8 +16,8 @@ class ActivitiesController < ApplicationController
     @museums = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{params[:term]}&categories=museums&location=#{params[:location]}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
     @first_museum = @museums['businesses'][@first_museum_num]
 
-    @restaurant = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:lunch]}&location=#{@first_museum['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-    @first_restaurant = @restaurant['businesses'][@first_restaurant_num]
+    @restaurants = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:lunch]}&location=#{@first_museum['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
+    @first_restaurant = @restaurants['businesses'][@first_restaurant_num]
 
     # If the first museum was selected, do not repeat the same museum as the second museum choice
     @museums2 = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{params[:term2]}&categories=museums&location=#{params[:location]}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
@@ -31,13 +31,13 @@ class ActivitiesController < ApplicationController
     end
 
     # If the first restaurant was randomly selected, do not repeat the same restaurant as the second restaurant choice
-    @restaurant2 = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:dinner]}&location=#{@second_museum['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
-    @second_restaurant = @restaurant2['businesses'][@second_restaurant_num]
+    @restaurants2 = HTTParty.get("https://api.yelp.com/v3/businesses/search?categories=#{params[:dinner]}&location=#{@second_museum['location']['zip_code']}", headers: {"Authorization" => "Bearer #{ENV['YELP_API_KEY']}"})
+    @second_restaurant = @restaurants2['businesses'][@second_restaurant_num]
     if @second_restaurant['name'] == @first_restaurant['name']
       if @second_restaurant_num > 0
-      @second_restaurant = @restaurant2['businesses'][@second_restaurant_num-1]
+      @second_restaurant = @restaurants2['businesses'][@second_restaurant_num-1]
     else
-      @second_restaurant = @restaurant2['businesses'][1]
+      @second_restaurant = @restaurants2['businesses'][1]
     end
   end
 
