@@ -65,7 +65,11 @@
          <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
       </div>
       <div class="transit-icons">
-         <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+      <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
+         <i class="material-icons"><button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+         directions_walk<span>&nbsp;&nbsp</span></i>
          <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
          <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
          <span class="uber-font">UBER</span>
@@ -75,11 +79,7 @@
          <% @business = @restaurant2['businesses'][0] %>
          <%=render 'checkeredboxes' %>
          <% @time_slot = 'Dinner'%>
-         <p>Price: <%= @second_restaurant['price'] %></p>
-         <p>Rating: <%= @second_restaurant['rating'] %></p>
-         <%=render 'form' %>
-         <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
-      </div>
+         <p>Price: <%= @second_restaurant['price'] %></p>Y
       <div class="transit-icons">
          <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
          <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
