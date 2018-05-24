@@ -233,7 +233,7 @@ input.body {
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
-    height: 60px;
+    height: 70px;
     padding: 10px 10px 0px 10px;
 }
 
@@ -243,7 +243,7 @@ input.body {
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
-    height: 60px;
+    height: 70px;
     padding: 10px 10px 0px 10px;
 }
 
@@ -445,7 +445,6 @@ input.body {
 #login-header {
     @include subheader;
     color: $header-color;
-    text-shadow: rgba(84, 84, 84, 1.00) 0px -1px 4px;
 }
 
 .signup {
