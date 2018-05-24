@@ -1,21 +1,16 @@
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper">
-        <div class="schedule-front">
-            <div class="museum-name"><%= @activity.name%></div>
-            <img src="<%=@activity.image_url%>" alt="<%=@activity.name%> image">
+  <div class="flipper">
+    <div class="schedule-front">
+      <div class="museum-name"><%= @activity.name%></div>
+      <p class="card-text"><i class="material-icons">pin_drop</i><%=@activity.address%></p>
+      <p class="card-text"><i class="material-icons">phone</i><%=@activity.phone%></p>
+      <p class="card-text"><%=@activity.price%></p>
+      <p class="card-text"><%=@activity.rating%></p>
 
-
-        </div>
-        <div class="schedule-back">
-
-
-                <div class="yelp-link"><a href="<%=@activity.url%>" target="_blank" class="yelp-copy">View on<img src="/assets/yelp-copy.png" alt="Yelp Logo"></a></div>
-                <p class="card-text"><i class="material-icons">pin_drop</i><%=@activity.address%></p>
-                <p class="card-text"><i class="material-icons">phone</i><%=@activity.phone%></p>
-                <p class="card-text"><%=@activity.price%></p>
-                <p class="card-text"><%=@activity.rating%></p>
-
-
-        </div>
     </div>
+    <div class="schedule-back">
+      <div class="yelp-link"><a href="<%=@activity.url%>" target="_blank" class="yelp-copy">View on<img src="/assets/yelp-copy.png" alt="Yelp Logo"></a></div>
+      <img src="<%=@activity.image_url%>" alt="<%=@activity.name%> image">
+    </div>
+  </div>
 </div>
