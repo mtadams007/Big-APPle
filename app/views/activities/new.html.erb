@@ -9,6 +9,7 @@
       <div class="time-of-day">MORNING</div>
       <div class="museum-restaurant-box">
 
+        <% @business_type = 'museum'%>
         <% @carousel_id = '1' %>
         <% @business = @first_museum %>
         <% @time_slot = "Morning" %>
@@ -28,12 +29,16 @@
       </div>
 
       <div class="museum-restaurant-box">
-        <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
-        <% @business = @restaurant['businesses'][0] %>
-        <%=render 'checkeredboxes' %>
-        <% @time_slot = 'Lunch' %>
-        <%=render 'form'%>
-        <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+        
+
+        <% @business_type = 'restaurant'%>
+        <% @carousel_id = '2' %>
+        <% @business = @first_restaurant %>
+        <% @time_slot = "Lunch" %>
+        <% @business_array = @restaurants %>
+        <% @random_num = @first_restaurant_num %>
+        <%= render 'carousel' %>
+
       </div>
       <div class="transit-icons">
         <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
@@ -48,6 +53,7 @@
       <div class="time-of-day">AFTERNOON</div>
       <div class="museum-restaurant-box">
 
+        <% @business_type = 'museum'%>
         <% @carousel_id = '3' %>
         <% @time_slot = 'Afternoon' %>
         <% @array = @museums2 %>
@@ -67,12 +73,17 @@
 
 
       <div class="museum-restaurant-box">
-        <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
-        <% @business = @restaurant2['businesses'][0] %>
-        <%=render 'checkeredboxes' %>
-        <% @time_slot = 'Dinner'%>
-        <%=render 'form' %>
-        <div class="reject-button"><%= link_to 'Fugheddaboudit!', activities_new_choice_path, remote: true, id: "ajaxcall"%></div>
+
+
+
+        <% @business_type = 'restaurant'%>
+        <% @carousel_id = '4' %>
+        <% @business = @second_restaurant %>
+        <% @time_slot = "Dinner" %>
+        <% @business_array = @restaurants2 %>
+        <% @random_num = @second_restaurant_num %>
+        <%= render 'carousel' %>
+
       </div>
       <div class="transit-icons">
         <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
