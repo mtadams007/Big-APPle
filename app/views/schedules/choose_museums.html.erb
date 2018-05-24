@@ -7,11 +7,11 @@
 <%= label_tag :location, "Hotel Zipcode", class: 'form-text' %>
 <%= text_field_tag :location, nil, size: '44', placeholder: 'e.g. 10001', class: 'input' %>
 <%= label_tag :term, "Morning Museum Type", class: 'form-text' %>
-<%= text_field_tag :term, nil, size: '44', placeholder: 'e.g.art', class: 'input' %>
+<%= select_tag "Museum Type", "<option>Art</option><option>History</option><option>Science</option>".html_safe, prompt: '' %>
 <%= label_tag :lunch, "Lunch Cuisine", class: 'form-text' %>
 <%= text_field_tag :lunch, nil, size: '44', placeholder: 'enter one type of cuisine', class: 'input input-large' %>
 <%= label_tag :term2, "Afternoon Museum Type", class: 'form-text' %>
-<%= text_field_tag :term2, nil, size: '44', placeholder: 'e.g. history', class: 'input' %>
+<%= select_tag "Museum Type", "<option>Art</option><option>History</option><option>Science</option>".html_safe, prompt: '' %>
 <%= label_tag :dinner, "Dinner Cuisine", class: 'form-text' %>
 
 <%= text_field_tag :dinner, nil, size: '44', placeholder: 'enter one type of cuisine', class: 'input' %><br>

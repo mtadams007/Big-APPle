@@ -220,7 +220,7 @@ input.body {
 .museum-restaurant-box {
     border-radius: 25px;
     width: 400px;
-    height: 350px;
+    height: 275px;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-font-color;
     margin: 0px auto 10px auto;
@@ -230,20 +230,20 @@ input.body {
 .museum-name {
     font-family: $header-font-stack;
     color: $form-primary;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     vertical-align: middle;
-    height: 100px;
+    height: 60px;
     padding: 10px 10px 0px 10px;
 }
 
 .restaurant-name {
     font-family: $header-font-stack;
     color: $header-font-stack;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     vertical-align: middle;
-    height: 100px;
+    height: 60px;
     padding: 10px 10px 0px 10px;
 }
 
@@ -373,16 +373,16 @@ input.body {
 .time-of-day {
     @include subheader;
     color: $header-grey;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
-    width: 250px;
+    width: 200px;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     background-color: $header-color;
     margin: 0px auto 30px auto;
     border-radius: 10px;
     font-family: $header-font-stack;
     vertical-align: middle;
-    height: 65px;
+    height: 50px;
     padding: 10px 10px 0px 10px;
 }
 
