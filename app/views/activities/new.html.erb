@@ -3,6 +3,7 @@
 </div>
 <% @schedule_id = @current_user.schedules.last.id%>
 <div class="container-fluid">
+<<<<<<< HEAD
 <div class="row">
 <div class="morning-schedule col-sm-4">
    <div class="time-of-day">MORNING</div>
@@ -89,3 +90,101 @@
    </div>
    <a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
 </div>
+=======
+
+
+   <div class="row">
+      <div class="morning-schedule col-sm-4">
+         <div class="time-of-day">MORNING</div>
+         <div class="museum-restaurant-box">
+           
+        <% @business_type = 'museum'%>
+        <% @carousel_id = '1' %>
+        <% @business = @first_museum %>
+        <% @business_type_and_num = 'business1'%>
+        <% @time_slot = "Morning" %>
+        <% @business_array = @museums %>
+        <% @random_num = @first_museum_num %>
+        <%= render 'carousel' %>
+
+
+
+      </div>
+      <div class="transit-icons">
+        <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+        <span class="uber-font">UBER</span>
+
+      </div>
+
+      <div class="museum-restaurant-box">
+
+         
+        <% @business_type_and_num = 'business2'%>
+        <% @business_type = 'restaurant'%>
+        <% @carousel_id = '2' %>
+        <% @business = @first_restaurant %>
+        <% @time_slot = "Lunch" %>
+        <% @business_array = @restaurants %>
+        <% @random_num = @first_restaurant_num %>
+        <%= render 'carousel' %>
+        </div>
+      <div class="transit-icons">
+        <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+        <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+        <span class="uber-font">UBER</span>
+      </div>
+    </div>
+            
+
+       <div class="afternoon-schedule col-sm-4">
+         <div class="time-of-day">AFTERNOON</div>
+         <div class="museum-restaurant-box">
+
+           <% @business_type_and_num = 'business3'%>
+           <% @business_type = 'museum'%>
+           <% @carousel_id = '3' %>
+           <% @time_slot = 'Afternoon' %>
+           <% @array = @museums2 %>
+           <% @business = @second_museum %>
+           <% @random_num = @second_museum_num %>
+           <%= render 'carousel' %>
+
+
+
+         </div>
+         <div class="transit-icons">
+           <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+           <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+           <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+           <span class="uber-font">UBER</span>
+         </div>
+
+
+           <div class="museum-restaurant-box">
+
+
+             <% @business_type_and_num = 'business4'%>
+             <% @business_type = 'restaurant'%>
+             <% @carousel_id = '4' %>
+             <% @business = @second_restaurant %>
+             <% @time_slot = "Dinner" %>
+             <% @business_array = @restaurants2 %>
+             <% @random_num = @second_restaurant_num %>
+             <%= render 'carousel' %>
+
+           </div>
+           <div class="transit-icons">
+             <i class="material-icons">directions_walk<span>&nbsp;&nbsp</span></i>
+             <i class="material-icons">directions_bike<span>&nbsp;&nbsp</span></i>
+             <i class="material-icons">directions_subway<span>&nbsp;&nbsp</span></i>
+             <span class="uber-font">UBER</span>
+           </div>
+         </div>
+       </div>
+       <a href="/schedules" class="hideMe" id="profileLink">We have our schedule!</a>
+     </div>
+
+>>>>>>> master
