@@ -1,6 +1,19 @@
 class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
+
+  # DELETE THIS SOON
+
+  def test
+    @schedule = Schedule.find(3)
+    @activities = @schedule.activities
+    @morning = @activities.find_by(time_slot: 'Morning')
+    @lunch = @activities.find_by(time_slot: 'Lunch')
+    @afternoon = @activities.find_by(time_slot: 'Afternoon')
+    @dinner = @activities.find_by(time_slot: 'Dinner')
+  end
+
+  # DELETE THAT STUFF ABOVE SOON
   def index
     # Displays the schedules of the logged_in user
     @current_user = current_user
