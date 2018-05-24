@@ -1,0 +1,21 @@
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+        <div class="schedule-front">
+            <h2><%= @activity.name%></h2>
+            <img src="<%=@activity.image_url%>" alt="<%=@activity.name%> image">
+
+
+        </div>
+        <div class="schedule-back">
+            <div class="back-logo">
+                <div class="back-title">
+                <a href="<%=@activity.url%>" target="_blank">View on Yelp</a>
+                <p><%=@activity.address%></p>
+                <p><%=@activity.phone%></p>
+                <p><%=@activity.price%></p>
+                <p><%=@activity.rating%></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
