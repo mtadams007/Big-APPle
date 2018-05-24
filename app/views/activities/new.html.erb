@@ -48,7 +48,7 @@
       <div class="museum-restaurant-box">
 
          <div class="museum-restaurant-box">
-            <div class="restaurant-name"><span class="glyphicon-glyphicon-cutlery"></span><%=@restaurant['businesses'][0]['name']%></div>
+            <div class="restaurant-name"><i class="material-icons">restaurant<span>&nbsp</span></i></span><%=@restaurant['businesses'][0]['name']%></div>
             <% @business = @restaurant['businesses'][0] %>
             <%=render 'checkeredboxes' %>
             <% @time_slot = 'Lunch' %>
@@ -82,7 +82,7 @@
 
          
          <div class="museum-restaurant-box">
-            <div class="restaurant-name"><span class="glyphicon-glyphicon-glass"></span>  <%=@restaurant2['businesses'][0]['name']%></div>
+            <div class="restaurant-name"><i class="material-icons">local_bar<span>&nbsp</span></i>  <%=@restaurant2['businesses'][0]['name']%></div>
             <% @business = @restaurant2['businesses'][0] %>
             <%=render 'checkeredboxes' %>
             <% @time_slot = 'Dinner'%>
