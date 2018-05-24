@@ -247,6 +247,11 @@ input.body {
     padding: 10px 10px 0px 10px;
 }
 
+.restaurant-icons {
+    display: flex;
+    flex-direction: row;
+}
+
 .time-slot {
     font-family: $body-font-stack;
     font-size: 30px;
@@ -515,7 +520,7 @@ a:hover {
     border-radius: 25px;
     width: 800px;
     height: 60px;
-    margin: 0px auto 0px auto;
+    margin: 0px auto 30px auto;
     text-align: center;
 }
 
@@ -663,6 +668,7 @@ a:hover {
 
 .icon {
     padding: 0px 10px 0px 10px;
+    height: 32px;
 }
 
 .hideMe {
