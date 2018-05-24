@@ -72,8 +72,6 @@ class SchedulesController < ApplicationController
       alternatives: false)
 
     @directions = routes[0]
-    # ['legs']['distance']['text']
-    #  <p>Google Directions: <%= @directions %></p>
   end
 
   private

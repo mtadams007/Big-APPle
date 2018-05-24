@@ -15,4 +15,5 @@
 //= require activestorage
 //= require turbolinks
 //= require functions
+//= require toggle
 //= require_tree .
