@@ -12,12 +12,6 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    @sample_schedule = Schedule.find(11)
-    @activities = @sample_schedule.activities
-    @museum1 = @activities.find_by(time_slot: 'Morning')
-    @restaurant1 = @activities.find_by(time_slot: 'Lunch')
-    @museum2 = @activities.find_by(time_slot: 'Afternoon')
-    @restaurant2 = @activities.find_by(time_slot: 'Dinner')
     @schedule = Schedule.new
     @current_user = current_user
   end
@@ -40,7 +34,7 @@ class SchedulesController < ApplicationController
     @museum2 = @activities.find_by(time_slot: 'Afternoon')
     @restaurant2 = @activities.find_by(time_slot: 'Dinner')
 
-    # Defining the Uber API 
+    # Defining the Uber API
     client = Uber::Client.new do |config|
       config.server_token = ENV['UBER_API_KEY']
     end
@@ -51,9 +45,9 @@ class SchedulesController < ApplicationController
     @dlat = @museum2.latitude
     @dlon = @museum2.longitude
 
-    # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum 
+    # The estimate for Uber travel in Uber Pool from the 1st restaurant to the 2nd museum
     @estimate = client.price_estimations(start_latitude: @slat, start_longitude: @slon, end_latitude: @dlat, end_longitude: @dlon)[0].estimate
-  
+
     # GOOGLE MAPS API
     require 'google_maps_service'
 
@@ -69,7 +63,7 @@ class SchedulesController < ApplicationController
 
     latlng_restaurant1 = [@slat, @slon]
     latlng_museum2 = [@dlat, @dlon]
-    
+
     # Simple directions
     routes = gmaps.directions(
       latlng_restaurant1,
