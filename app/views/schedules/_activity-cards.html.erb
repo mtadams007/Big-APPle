@@ -1,21 +1,21 @@
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
         <div class="schedule-front">
-            <h2><%= @activity.name%></h2>
+            <div class="museum-name"><%= @activity.name%></div>
             <img src="<%=@activity.image_url%>" alt="<%=@activity.name%> image">
 
 
         </div>
         <div class="schedule-back">
-            <div class="back-logo">
-                <div class="back-title">
-                <a href="<%=@activity.url%>" target="_blank">View on Yelp</a>
-                <p><%=@activity.address%></p>
-                <p><%=@activity.phone%></p>
-                <p><%=@activity.price%></p>
-                <p><%=@activity.rating%></p>
-                </div>
-            </div>
+            
+                
+                <div class="yelp-link"><a href="<%=@activity.url%>" target="_blank" class="yelp-copy">View on<img src="/assets/yelp-copy.png" alt="Yelp Logo"></a></div>
+                <p class="card-text"><i class="material-icons">pin_drop</i><%=@activity.address%></p>
+                <p class="card-text"><i class="material-icons">phone</i><%=@activity.phone%></p>
+                <p class="card-text"><%=@activity.price%></p>
+                <p class="card-text"><%=@activity.rating%></p> 
+                
+            
         </div>
     </div>
 </div>
