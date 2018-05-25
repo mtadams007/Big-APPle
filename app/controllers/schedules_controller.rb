@@ -16,11 +16,6 @@ class SchedulesController < ApplicationController
     @current_user = current_user
     @schedules = @current_user.schedules
 
-    @activities = @schedules.last.activities
-    @morning = @activities.find_by(time_slot: 'Morning')
-    @lunch = @activities.find_by(time_slot: 'Lunch')
-    @afternoon = @activities.find_by(time_slot: 'Afternoon')
-    @dinner = @activities.find_by(time_slot: 'Dinner')
   end
 
   def choose_museums
