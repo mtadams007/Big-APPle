@@ -586,6 +586,22 @@ a:hover {
     padding: 5px;
 }
 
+.schedule-list {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 400px;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    background-color: $header-color;
+    border-radius: 25px;
+    margin: 0px auto 40px auto;
+    padding: 20px 10px 10px 10px;
+    font-family: $body-font-stack;
+    color: $header-grey;
+    font-size: 20px;
+    text-align: center;
+}
+
 .yelp-link {
     font-family: $header-font-stack;
     color: $form-primary;

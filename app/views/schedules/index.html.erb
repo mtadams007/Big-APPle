@@ -1,5 +1,14 @@
-<h1> <%=@current_user.first_name%>'s Schedules </h1>
+<div class="create-box">
+<p class="create-box-text"> <%=@current_user.first_name%>'s Schedules </p>
+</div>
 <% @schedules.each do |schedule| %>
-<h1> Schedule: <%= schedule.id %></h1>
-<h1> <%= schedule.updated_at%></h1>
+<div class="container">
+<div class="row">
+<div class="schedule-list" class="col-6">
+<p> Schedule: <%= schedule.id %></p>
+<span>&nbsp;&nbsp;&nbsp</span>
+<p> <%= schedule.updated_at%></p>
+</div>
+</div>
+</div>
 <% end %>
