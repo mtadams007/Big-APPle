@@ -10,75 +10,27 @@
             <div class="schedule-layout-morning col-sm-6">
                 <div class="time-of-day">Morning</div>
 
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="schedule-front">
-                            <span>Front</span>
-                        </div>
-                        <div class="schedule-back">
-                            <div class="back-logo">
-                                <div class="back-title">
-                                    Back
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+                <%@activity = @morning %>
+          <%= render 'activity-cards' %>
 
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="schedule-front">
-                                <span>Front</span>
-                            </div>
-                            <div class="schedule-back">
-                                <div class="back-logo">
-                                    <div class="back-title">
-                                        Back
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+          <%@activity = @lunch %>
+          <%= render 'activity-cards' %>
+
             </div>
 
 
             <div class="schedule-layout-afternoon col-sm-6">
                 <div class="time-of-day">Afternoon</div>
 
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="schedule-front">
-                            <span>Front</span>
-                        </div>
-                        <div class="schedule-back">
-                            <div class="back-logo">
-                                <div class="back-title">
-                                    Back
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+                <%@activity = @afternoon %>
+          <%= render 'activity-cards' %>
+
+          <%@activity = @dinner %>
+          <%= render 'activity-cards' %>
 
 
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="schedule-front">
-                                <span>Front</span>
-                            </div>
-                            <div class="schedule-back">
-                                <div class="back-logo">
-                                    <div class="back-title">
-                                        Back
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+
+
             </div>
 
         </div>
