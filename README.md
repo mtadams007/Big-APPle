@@ -2,15 +2,15 @@
 
 ## USER STORY
 
-### The user is in NYC for a day. The user wants to eat Mexican food after visiting a history museum and Chinese food after visitng an art museum. 
+The user is in NYC for a day. The user wants to eat Mexican food after visiting a history museum and Chinese food after visitng an art museum. 
 
 ## WHAT IS OUR PRODUCT?
 
-### A travel app built on Rails, limited breaks in NYC (12-48 hours). Creates an itinerary based around a users interests, available time and budget.
+A travel app built on Rails, limited breaks in NYC (12-48 hours). Creates an itinerary based around a users interests, available time and budget.
 
 ## WHAT PROBLEM DOES IT SOLVE?
 
-### Condenses an overwhelming amount of information, into an easy plan for a weekend. Removes the time consuming planning for those unfamiliar with NYC.
+Condenses an overwhelming amount of information, into an easy plan for a weekend. Removes the time consuming planning for those unfamiliar with NYC.
 
 ## WHAT ARE OUR MVP FEATURES?
 
