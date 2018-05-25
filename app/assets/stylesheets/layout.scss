@@ -426,13 +426,15 @@ input.body {
 
 .choose-schedule-box {
     border-radius: 25px;
-    width: 400px;
+    width: 1000px;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     margin: 0px auto 0px auto;
     padding: 20px 20px 20px 20px;
     font-family: $body-font-stack;
     background-color: $header-font-color;
     height: 460px;
+    display: flex;
+    flex-direction: row;
 }
 
 .login-box {
