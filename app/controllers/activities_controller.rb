@@ -6,6 +6,9 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+
+
+
     # Selecting a random museum/restaurant from the top 5 Yelp list so that the same option is not always selected
     @first_museum_num = Random.rand(5)
     @second_museum_num = Random.rand(5)
@@ -43,6 +46,7 @@ class ActivitiesController < ApplicationController
 
     @activity = Activity.new
     @current_user = current_user
+
   end
 
   def create

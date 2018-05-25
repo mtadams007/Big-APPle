@@ -18,6 +18,12 @@ class SchedulesController < ApplicationController
     # Displays the schedules of the logged_in user
     @current_user = current_user
     @schedules = @current_user.schedules
+
+    @activities = @schedules.last.activities
+    @morning = @activities.find_by(time_slot: 'Morning')
+    @lunch = @activities.find_by(time_slot: 'Lunch')
+    @afternoon = @activities.find_by(time_slot: 'Afternoon')
+    @dinner = @activities.find_by(time_slot: 'Dinner')
   end
 
   def choose_museums
@@ -92,7 +98,7 @@ class SchedulesController < ApplicationController
 
     latlng_restaurant1 = [@rest1_lat, @rest1_lon]
     latlng_restaurant2 = [@rest2_lat, @rest2_lon]
-    latlng_museum1 = [@museum1_lat, @museum1_lon] 
+    latlng_museum1 = [@museum1_lat, @museum1_lon]
     latlng_museum2 = [@museum2_lat, @museum1_lon]
 
     # DIRECTIONS FROM MUSEUM 1 TO RESTAURANT 1
@@ -118,7 +124,7 @@ class SchedulesController < ApplicationController
       transit_mode: 'subway ',
       alternatives: false)
     @transit_distance_m1r1 = subway[0][:legs][0][:distance][:text]
-    
+
     # DIRECTIONS FROM RESTAURANT 1 TO MUSEUM 2
     walking = gmaps.directions(
       latlng_restaurant1,
@@ -143,7 +149,7 @@ class SchedulesController < ApplicationController
       alternatives: false)
     @transit_distance_r1m2 = subway[0][:legs][0][:distance][:text]
 
-    # DIRECTIONS FROM MUSEUM 2 TO RESTAURANT 2 
+    # DIRECTIONS FROM MUSEUM 2 TO RESTAURANT 2
     walking = gmaps.directions(
       latlng_museum2,
       latlng_restaurant2,
