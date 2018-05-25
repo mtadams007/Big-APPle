@@ -8,15 +8,16 @@
 <%= text_field_tag :location, nil, size: '44', placeholder: 'e.g. 10001', class: 'input' %>
 <%= label_tag :term, "Morning Museum ", class: 'form-text' %>
 <%= select_tag "Museum Type", "<option>Art</option><option>History</option><option>Science</option>".html_safe, prompt: '' %>
-<%= label_tag :term, "Choose Lunch", class: 'form-text' %>
-<%= select_tag "lunch", '<option value="restaurants">All</option>''<option value="mexican">Mexican</option>' '<option value="indpak">Indian</option>' '<option value="chinese">Chinese</option>''<option value="italian">Italian</option>,<option value="tradamerican">American</option>' '<option value="french">French</option>' '<option value="pizza">Pizza</option>' '<option value="burgers">Burgers</option>' '<option value="japanese">Japanese</option>' '<option value="thai">Thai</option>' '<option value="caribbean">Caribbean</option>'.html_safe, prompt: '' %>
+<%= label_tag :lunch, "Lunch Cuisine", class: 'form-text' %>
 
-<%= label_tag :term2, "Afternoon Museum", class: 'form-text' %>
+<%= select_tag "lunch", '<option value="restaurants">All</option>''<option>Mexican</option>' '<option value="indpak">Indian</option>' '<option>Chinese</option>''<option>Italian</option>,<option value="tradamerican">American</option>' '<option>French</option>' '<option>Pizza</option>' '<option>Burgers</option>' '<option>Japanese</option>' '<option>Thai</option>' '<option>Caribbean</option>'.html_safe, prompt: '' %>
+
+
+<%= label_tag :term2, "Afternoon Museum Type", class: 'form-text' %>
 <%= select_tag "Museum Type", "<option>Art</option><option>History</option><option>Science</option>".html_safe, prompt: '' %>
 <%= label_tag :term, "Choose Dinner", class: 'form-text' %>
 
-<%= select_tag "dinner", '<option value="restaurants">All</option>''<option value="mexican">Mexican</option>' '<option value="indpak">Indian</option>' '<option value="chinese">Chinese</option>''<option value="italian">Italian</option>,<option value="tradamerican">American</option>' '<option value="french">French</option>' '<option value="pizza">Pizza</option>' '<option value="burgers">Burgers</option>' '<option value="japanese">Japanese</option>' '<option value="thai">Thai</option>' '<option value="caribbean">Caribbean</option>'.html_safe, prompt: '' %>
-<br>
+<%= select_tag "dinner", '<option value="restaurants">All</option>''<option value="mexican">Mexican</option>' '<option value="indpak">Indian</option>' '<option value="chinese">Chinese</option>''<option value="italian">Italian</option>,<option value="tradamerican">American</option>' '<option value="french">French</option>' '<option value="pizza">Pizza</option>' '<option value="burgers">Burgers</option>' '<option value="japanese">Japanese</option>' '<option value="thai">Thai</option>' '<option value="caribbean">Caribbean</option>'.html_safe, prompt: '' %><br>
 <div id="submit"><%= submit_tag "Go", class: 'schedule-button' %></div>
 
 <%end%>
