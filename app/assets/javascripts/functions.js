@@ -13,7 +13,7 @@ for(let  k=1; k<=num_of_business;k++){
         if (counter === max){
           counter = 0;
           let new_url = window.location.origin;
-          new_url += "/schedules"
+          new_url += "/schedules/latest"
           window.location = new_url
         }
      });

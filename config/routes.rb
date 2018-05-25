@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'activities/new'
   get 'schedules/choose_museums'
   get 'activities/new_choice'
-  get 'schedules/test'
+  get 'schedules/latest'
 
   resources :schedules
   resources :activities
