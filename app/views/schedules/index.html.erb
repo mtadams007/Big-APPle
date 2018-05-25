@@ -3,6 +3,7 @@
 </div>
 <% @schedules.each do |schedule| %>
 <div class="container">
+<a href="/schedules/<%=schedule.id%>}">
 <div class="row">
 <div class="schedule-list" class="col-6">
 <p> Schedule: <%= schedule.id %></p>
@@ -10,5 +11,6 @@
 <p> <%= schedule.updated_at%></p>
 </div>
 </div>
+</a>
 </div>
 <% end %>
