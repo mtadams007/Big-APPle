@@ -4,18 +4,18 @@
 
             <div class="schedule-layout-morning col-sm-6">
                 <div class="schedule-header-morning" class="card" class="card-corner" class="card-corner-triangle">Morning</div>
-                <div class="destination-box">
-                    <h3>
-                        <%=@museum1.name%>
-                    </h3>
-                </div>
+
+                <%@activity = @museum1 %>
+          <%= render 'activity-cards' %>
+
+
+
                 <div class="transit-icons">
                 </div>
-                <div class="dining-box">
-                    <h3>
-                        <%=@restaurant1.name%>
-                    </h3>
-                </div>
+
+                <%@activity = @restaurant1 %>
+                <%= render 'activity-cards' %>
+
                 <% @distance = @distance_m1r1 %>
                 <% @time = @time_m1r1 %>
                 <% @bike_distance = @bike_distance_m1r1 %>
@@ -28,12 +28,10 @@
 
             <div class="schedule-layout-afternoon col-sm-6">
                 <div class="schedule-header-afternoon">Afternoon</div>
-                <div class="destination-box">
-                    <h3>
-                        <%=@museum2.name%>
-                    </h3>
-                    <p>Uber Estimate: <%= @estimate %></p>
-                </div>
+
+                <%@activity = @museum2 %>
+                <%= render 'activity-cards' %>
+
                 <% @distance = @distance_r1m2 %>
                 <% @time = @time_r1m2 %>
                 <% @bike_distance = @bike_distance_r1m2 %>
@@ -42,11 +40,10 @@
                 <% @estimate = @estimate_r1m2 %>
                 <% @minutes = @minutes_r1m2 %>
                 <%= render 'transportation' %>
-                <div class="dining-box">
-                    <h3>
-                        <%=@restaurant2.name%>
-                    </h3>
-                </div>
+
+                
+                <%@activity = @restaurant2 %>
+                <%= render 'activity-cards' %>
                 <% @distance = @distance_m2r2 %>
                 <% @time = @time_m2r2 %>
                 <% @bike_distance = @bike_distance_m2r2%>
@@ -57,7 +54,7 @@
                 <%= render 'transportation' %>
                 </div>
             </div>
-        
+
         </div>
 
     </div>
