@@ -315,13 +315,20 @@ input.body {
 
 .transit-icons {
     width: 400px;
-    height: 50px;
+    height: 51px;
     border-radius: 25px;
     background-color: $header-color;
     font-size: 30px;
     text-align: center;
     margin: 0 auto 40px auto;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+    color: gray;
+}
+
+.btn-secondary {
+    color: black;
+    background-color: $header-color;
+    border-color: $header-color;
 }
 
 .bike {
