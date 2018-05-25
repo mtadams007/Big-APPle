@@ -580,7 +580,7 @@ a:hover {
 
 .card-text {
     font-family: $body-font-stack;
-    font-size: 20px;
+    font-size: 15px;
     color: $header-grey;
     text-align: center;
     padding: 5px;
@@ -691,9 +691,9 @@ a:hover {
     flex-direction: row;
 }
 
-.btn {
+.btn-warning {
     padding: 14px 24px;
-    margin: 10px;
+    margin: 0 10px 30px 10px;
     border: 0 none;
     font-weight: 700;
     letter-spacing: 1px;
