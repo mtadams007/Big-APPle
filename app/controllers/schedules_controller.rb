@@ -2,15 +2,13 @@ class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
 
-  # DELETE THIS SOON
-
   def latest
     @current_user = current_user
     @schedule = @current_user.schedules.last
     redirect_to "/schedules/#{@schedule.id}"
   end
 
-  # DELETE THAT STUFF ABOVE SOON
+
   def index
     # Displays the schedules of the logged_in user
     @current_user = current_user
