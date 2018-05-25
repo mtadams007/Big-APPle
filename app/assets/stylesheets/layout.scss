@@ -320,11 +320,12 @@ input.body {
     height: 51px;
     border-radius: 25px;
     background-color: $header-color;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     margin: 0 auto 40px auto;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     color: gray;
+    line-height: 2;
 }
 
 .btn-secondary {
@@ -347,7 +348,7 @@ input.body {
 
 .uber-font {
     font-family: 'Rubik', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -700,14 +701,14 @@ a:hover {
     background-color: $header-font-color;
     padding-top: 20px;
     margin-bottom: 0;
+    padding-bottom: 70px;
+    text-align: center;
 }
 
-.footer-block {
-    display: flex;
-    flex-direction: row;
-}
-
-
+// .footer-block {
+//     display: flex;
+//     flex-direction: row;
+// }
 .btn-warning {
     padding: 14px 24px;
     margin: 0 10px 30px 10px;
@@ -728,7 +729,6 @@ a:hover {
     outline: 0 none;
 }
 
-
 .yelp img {
     width: 20%;
     height: auto;
@@ -745,6 +745,7 @@ a:hover {
     font-family: $header-font-stack;
     font-size: 20px;
     color: $background-color;
+    display: flex;
 }
 
 .yelp-copy img {
@@ -762,8 +763,15 @@ a:hover {
 }
 
 .social-icons {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
+    height: 200px;
+    width: 50%;
+}
+
+.api-logos {
+    display: inline-block;
+    height: 200px;
+    width: 50%;
 }
 
 .icon {
