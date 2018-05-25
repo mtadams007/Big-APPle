@@ -569,6 +569,14 @@ a:hover {
     color: $header-grey;
     text-align: center;
     padding: 5px;
+    background-color: $header-color;
+    border-radius: 25px;
+}
+
+.card-container {
+    background-color: $header-color;
+    border-radius: 25px;
+    background-position: 0 -1.7em;
 }
 
 .yelp-link {
@@ -691,6 +699,14 @@ a:hover {
     width: 55%;
     height: auto;
     padding: 0px 0px 10px 0px;
+}
+
+.venue img {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0px 0px 10px;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
 }
 
 .social-icons {

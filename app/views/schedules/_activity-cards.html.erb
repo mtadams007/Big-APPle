@@ -2,15 +2,15 @@
   <div class="flipper">
     <div class="schedule-front">
       <div class="museum-name"><%= @activity.name%></div>
-      <p class="card-text"><i class="material-icons">pin_drop</i><%=@activity.address%></p>
-      <p class="card-text"><i class="material-icons">phone</i><%=@activity.phone%></p>
+      <div class="card-container"><p class="card-text"><%=@activity.address%></p>
+      <p class="card-text"><%=@activity.phone%></p></div>
       <p class="card-text"><%=@activity.price%></p>
       <p class="card-text"><%=@activity.rating%></p>
 
     </div>
     <div class="schedule-back">
       <div class="yelp-link"><a href="<%=@activity.url%>" target="_blank" class="yelp-copy">View on<img src="/assets/yelp-copy.png" alt="Yelp Logo"></a></div>
-      <img src="<%=@activity.image_url%>" alt="<%=@activity.name%> image">
+      <div class="venue"><img src="<%=@activity.image_url%>" alt="<%=@activity.name%> image"></div>
     </div>
   </div>
 </div>
