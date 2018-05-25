@@ -1,12 +1,10 @@
-<div class="planning-form">
     <%= simple_form_for @schedule do |f| %>
         <%= f.hidden_field :user_id, value: @current_user.id %>
-     <div class="create-schedule-button">   <%= f.submit "Click here to create a day in NYC", class: 'create-schedule-text' %> </div>
+     <div class="create-schedule-button">   <%= f.submit "CREATE A DAY IN NYC", class: 'create-schedule-text' %> </div>
     <% end %>
-</div>
 
 <div class="sample-schedule-box">
-<div class="sample-schedule-text">Check out a sample itinerary</div>
+<div class="create-schedule-button"><div class="sample-schedule-text">SAMPLE ITINERARY</div></div>
 </div>
 
 

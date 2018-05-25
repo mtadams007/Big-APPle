@@ -56,14 +56,14 @@
     flex-direction: row;
     position: absolute;
     top: 8px;
-    left: 110px;
+    left: 100px;
     z-index: 0;
 }
 
 .header-text-grey {
     font-family: $header-font-stack;
     color: $header-grey;
-    font-size: 100px;
+    font-size: 80px;
     display: flex;
     flex-direction: row;
 }
@@ -71,7 +71,7 @@
 .header-text-yellow {
     font-family: $header-font-stack;
     color: $header-font-color;
-    font-size: 100px;
+    font-size: 80px;
     display: flex;
     flex-direction: row;
 }
@@ -87,9 +87,9 @@
 
 //matching background color of body to color of NYC skyline image, making full-page
 .body {
-    min-height: 100%;
     margin: auto;
-    padding: 0;
+    padding: 50px;
+    padding-bottom: 100px;
     background-image: linear-gradient(180deg, #CCC6C0 0%, #8E9AAF 100%);
     background-position: center;
     background-repeat: no-repeat;
@@ -510,6 +510,8 @@ a:hover {
     text-align: center;
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+    line-height: 58px;
 }
 
 .create-schedule-button {
@@ -545,24 +547,27 @@ a:hover {
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+    line-height: 58px;
 }
 
 .create-box {
     background-color: $header-font-color;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     border-radius: 25px;
-    width: 500px;
+    width: 400px;
     height: 60px;
     margin: 0px auto 40px auto;
+    margin-bottom: 50px;
 }
 
 .create-box-text {
     font-family: $header-font-stack;
-    font-size: 40px;
+    font-size: 22px;
     color: $header-grey;
     text-align: center;
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
+    line-height: 58px;
 }
 
 .form-text {
@@ -673,7 +678,7 @@ a:hover {
     bottom: 0;
     width: 100%;
     position: fixed;
-    height: 100px;
+    height: 70px;
     background-color: $header-font-color;
     padding-top: 20px;
     margin-bottom: 0;
