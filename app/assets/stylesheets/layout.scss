@@ -87,7 +87,7 @@
 
 //matching background color of body to color of NYC skyline image, making full-page
 .body {
-    min-height: 100vh;
+    min-height: 100%;
     margin: auto;
     padding: 0;
     background-image: linear-gradient(180deg, #CCC6C0 0%, #8E9AAF 100%);
@@ -101,6 +101,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: $background-color;
 }
 
 h1 {
@@ -495,7 +496,7 @@ a:hover {
     color: $header-grey;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     border-radius: 25px;
-    width: 800px;
+    width: 400px;
     height: 60px;
     margin: 0px auto 0px auto;
     text-align: center;
@@ -505,7 +506,7 @@ a:hover {
 .sample-schedule-text {
     font-family: $header-font-stack;
     color: $header-grey;
-    font-size: 40px;
+    font-size: 22px;
     text-align: center;
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
@@ -515,7 +516,7 @@ a:hover {
     background-color: $header-font-color;
     box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
     border-radius: 25px;
-    width: 800px;
+    width: 400px;
     height: 60px;
     margin: 0px auto 30px auto;
     text-align: center;
@@ -539,7 +540,7 @@ a:hover {
 .create-schedule-text {
     font-family: $header-font-stack;
     color: $header-grey;
-    font-size: 40px;
+    font-size: 22px;
     text-align: center;
     vertical-align: middle;
     padding: 0px 0px 10px 0px;
@@ -671,7 +672,7 @@ a:hover {
 #footer {
     bottom: 0;
     width: 100%;
-    position: relative;
+    position: fixed;
     height: 100px;
     background-color: $header-font-color;
     padding-top: 20px;
