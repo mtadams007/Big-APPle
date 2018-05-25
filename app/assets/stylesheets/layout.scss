@@ -691,6 +691,26 @@ a:hover {
     flex-direction: row;
 }
 
+.btn {
+    padding: 14px 24px;
+    margin: 10px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: $body-font-stack;
+    border-radius: 24px;
+    color: $header-grey;
+    background-color: #ffcc00;
+    box-shadow: 5px 5px 11px rgba(108, 108, 108, 1.00);
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: 0 none;
+}
+
 .yelp img {
     width: 20%;
     height: auto;
