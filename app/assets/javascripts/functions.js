@@ -1,5 +1,5 @@
-let maxActivities = 4
-let counter = 0;
+maxActivities = 4
+counter = 0;
 $( document ).on('turbolinks:load', function() {
 
 num_of_caro = 5
