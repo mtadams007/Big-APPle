@@ -1,5 +1,5 @@
-maxActivities = 4
-counter = 0;
+let max = 4
+let counter = 0;
 $( document ).on('turbolinks:load', function() {
 
 num_of_caro = 5
@@ -10,7 +10,7 @@ for(let  k=1; k<=num_of_business;k++){
       $(`.schedule-submit-button.business${k}_carousel${i}`).click(function(){
         $(`.business${k}_carousel${i}`).addClass("hideMe");
         counter++;
-        if (counter === maxActivities){
+        if (counter === max){
           counter = 0;
           let new_url = window.location.origin;
           new_url += "/schedules/latest"
