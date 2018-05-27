@@ -1,7 +1,7 @@
-maxActivities = 4
-counter = 0;
-$( document ).on('turbolinks:load', function() {
 
+$( document ).on('turbolinks:load', function() {
+  maxActivities = 4
+  counter = 0;
 num_of_caro = 5
 num_of_business = 4
 
