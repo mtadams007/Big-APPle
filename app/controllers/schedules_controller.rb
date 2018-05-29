@@ -1,19 +1,16 @@
 class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
-
   def latest
     @current_user = current_user
     @schedule = @current_user.schedules.last
     redirect_to "/schedules/#{@schedule.id}"
   end
 
-
   def index
     # Displays the schedules of the logged_in user
     @current_user = current_user
     @schedules = @current_user.schedules
-
   end
 
   def choose_museums
@@ -162,7 +159,6 @@ class SchedulesController < ApplicationController
       transit_mode: 'subway ',
       alternatives: false)
     @transit_distance_m2r2 = subway[0][:legs][0][:distance][:text]
-
   end
 
   private
